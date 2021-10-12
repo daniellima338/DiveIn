@@ -1,9 +1,9 @@
-# **Into The Wild**
+# **DiveIn**
 
 ![Mokeup Image](assets/images/mock-up.png)
 
 ## **Goal for this project** 
-Into The Wild is a fun an challenging quiz game with focus on Animals.  The questions will be of varied difficulty. See if you can hit the top of the list! 
+DiveIn is a webstie for divers. Here you can find information about awesome dive spots around the world. But not only ccan you find information, you can also rate dives yourself, as well as add a dive spot to the given country. 
 
 Thank you for visiting my project!
 If you have any feedback or questions, head over to my GitHub contact details and feel free to reach out to me.
@@ -110,30 +110,37 @@ First I created a wireframe for mobile, as the approach is mobile first. Thereaf
 You can find my wireframes below:
 
 #### Desktop Wireframes 
-* [Home page](wireframes/desktop/home-page.png)
-* [Quiz page](wireframes/desktop/play-page.png)
-* [Tutorial page](wireframes/desktop/tutorial-page.png)
-* [Countdown page](wireframes/desktop/countdown-page.png)
-* [Contact page](wireframes/desktop/contact-page.png)
+* [Home Page](wireframes/desktop/Desktop_home_page.png)
+* [Dive Destination page](wireframes/desktop/Desktop_dive_destinations.png)
+* [Country page](wireframes/desktop/Desktop_country_page.png)
+* [Profile page](wireframes/desktop/Desktop_profile_page.png)
+* [Register page](wireframes/desktop/Desktop_register.png)
+* [Login page](wireframes/desktop/Desktop_login.png)
+* [Add Dive page](wireframes/desktop/Desktop_add_dive_page.png)
 
 #### Tablet Wireframes
-* [Home page](wireframes/tablet/tablet-home-page.png)
-* [Quiz page](wireframes/tablet/tablet-play-page.png)
-* [Tutorial page](wireframes/tablet/tablet-tutorial-page.png)
-* [Countdown page](wireframes/tablet/tablet-countdown-page.png)
-* [Contact page](wireframes/tablet/tablet-contact-page.png)
+* [Home Page](wireframes/tablet/Tablet_home_page.png)
+* [Dive Destination page](wireframes/tablet/Tablet_dive_destinations.png)
+* [Country page](wireframes/tablet/Tablet_country_page.png)
+* [Profile page](wireframes/tablet/Tablet_profile_page.png)
+* [Register page](wireframes/tablet/Tablet_register.png)
+* [Login page](wireframes/tablet/Tablet_login.png)
+* [Add Dive page](wireframes/tablet/Tablet_add_dive_page.png)
 
 #### Mobile Wireframes 
-* [Home page](wireframes/mobile/mobile-home-page.png)
-* [Quiz page](wireframes/mobile/mobile-play-page.png)
-* [Tutorial page](wireframes/mobile/mobile-tutorial-page.png)
-* [Countdown page](wireframes/mobile/mobile-countdown-page.png)
-* [Contact page](wireframes/mobile/mobile-contact-page.png)
+* [Home Page](wireframes/mobile/Mobile_home_page.png)
+* [Dive Destination page](wireframes/mobile/Mobile_dive_destinations.png)
+* [Country page](wireframes/mobile/Mobile_country_page.png)
+* [Profile page](wireframes/mobile/Mobile_profile_page.png)
+* [Register page](wireframes/mobile/Mobile_register.png)
+* [Login page](wireframes/mobile/Mobile_login.png)
+* [Add Dive page](wireframes/mobile/Mobile_add_dive_page.png)
 
 ### Features to be implemented
 
-* A brief description of each correct answer. 
-* A motion into the jungle effect. 
+* A heatmap over where diving is good during different seasons.
+* Access to store with diving gear.
+* community forum, where users can discuss various subjects.
 
 [Back to Top](#table-of-contents)
 
@@ -147,20 +154,23 @@ You can find my wireframes below:
 * [HTML](https://en.wikipedia.org/wiki/HTML)
 * [CSS](https://en.wikipedia.org/wiki/Cascading_Style_Sheets)
 * [JavaScript](https://en.wikipedia.org/wiki/JavaScript)
+* [Python](https://en.wikipedia.org/wiki/Python_(programming_language))
 
 ### Libraries & Frameworks
 
 * [Font Awesome](https://fontawesome.com/)
-* [Bootstrap](https://getbootstrap.com/)
+* [Materialize](https://materializecss.com/)
 * [Google Fonts](https://fonts.google.com/)
 * [Jquery](https://jquery.com/)
+* [MongoDB](https://en.wikipedia.org/wiki/MongoDB)
+
 
 ### Tools
 * [Git](https://git-scm.com/)
 * [GitPod](https://www.gitpod.io/)
 * [Balsamic](https://balsamiq.com/wireframes/)
 * [W3C HTML Validation Service](https://validator.w3.org/)
-* [W3C CSS Validation Service](https://jigsaw.w3.org/css-validator/) - Some bugs and warnings occure due to bootstrap. 
+* [W3C CSS Validation Service](https://jigsaw.w3.org/css-validator/) - Some bugs and warnings occure due to materialize. 
 
 [Back to Top](#table-of-contents)
 
@@ -169,87 +179,85 @@ You can find my wireframes below:
 
 ## **Testing**
 
-#### User story: As a user I want to be entertained by the game I am playing.
+#### User story: As a user I want to be able to find new diving spots.
 * **Plan**
 The plan is to make a game that recreates a feeling of going into the jungle. The user needs to get a feeling that they have to be experts about animals to survive. The page has to be easy to navigate, and the game has to be easy to understand. If that is all achieved the user should have a good experience. 
 
 * **Implementation**
-The implimentation is setup using a easy navigation system, where it is only possible to go very few roads from the menu. All ways are leading to the beginning of the game. The ideale route should be for the user to read the tutorial first and then play the game. But it should also be possible to play the game without reading the tutorial
+
 
 * **Test**    
-I had 3 people play the game. All of them wanted to play the game again, as they wanted to beat the score they had gotten before. The easy way through the game, made it easy for the users to understand what they should do, and they understood that it was a quiz game. 1 person had a hard time understanding why he died, as he didn't understand he had 4 lives. That maybe has to be clearer. 
+
 
 * **Result**  
-The users felt entertained and they wanted to play again. A single user did not understand how the game worked, and the progressionbar has to be more clear. 
+
 
 * **Verdict**  
-The game almost passed the userbility test according to the user story. Small changes has to be implimented. 
 
 
-#### User story: As a user I want to be able to see how well I did compared to others.
+
+#### User story: As a user I want to be able to showcase my own diving experiences.
 * **Plan** 
 The user has to be able to see their score against other users. Here the user has to be able to put in their name and pin their score to a highscore board. 
 
 * **Implementation**  
-The user will see a modal when they finish the game. Here the user will be able to put in their name and then save their score to the highscore board. If they wish to not save their score, they can just play the game again. 
+
 
 * **Test** 
-3 users tested the highscore function and all went through the functionality without issues.
+
 
 * **Result** 
-the 3 users tested the game and were all able to put in their score. They found the functionality very easily navigated and they didn't have any issues. 1 user noted that their score was not saved, when they played the game on different devices. That is because it is stored localy. For a future update the score will be stored at a database, but for the moment a local storage is what is available. 
-* **Verdict** 
-The test has passed all the criteria and works like planned.
 
-#### User story: As a user I want to be able to learn new things, by playing the game.
+* **Verdict** 
+
+
+#### User story: As a user I want to se other peoples diving experiences.
 * **Plan** 
 The user is supposed to play the game many times to remember the right answers as they go. I expect the user to get some answers right and some wrong, and therefore having to play the game again. 
 
 * **Implementation**
-The user will be shown a red button when they answer wrong and a green when they answer right. It is liberatly that the user is not shown the right answer after they get a wrong answer, as they can then play the game more time. 
+
 
 * **Test**  
-The test the users will go through have to do with the users wanting to play the game again and not asking why they don't see the right answer after answering wrong. 
+
 
 * **Result** 
- 3 users tested the functionality of the game, and did not comment on why they didn't see the right answer after they answered wrong. On the other hand they wanted to play again, and therefore the idea of the game works. The users then get knowledge by repeating the game many times. 
+
 
 * **Verdict**  
-The test has passed all the criteria and works like planned.
+
  
 
-#### User story: As a user I want to be able to contact the owner, if i have anything to ask about.
+#### User story: As a user I want to be able understand what the website is about very quickly.
 * **Plan** 
 The plan is for the user to be able to contact the owner through a form if they go to the contact page. The contact page is not supposed to be very visible, as it is not a huge part of the application. 
 
 * **Implementation**  
-The user can navigate to the contact form through the footer. Here they will arrive at a form they have to fill out. The form is set up with EmailJS and I will recieve any question they ask along with the email it is send from. 
 
 * **Test** 
-The user had to navigate to the contact form and send an email without help.
 
 * **Result** 
-The 3 users that tested the app had no issues finding the navigation to the form, and send and email on without issues. 
+
 * **Verdict**     
-The user was successfully able to send emails to the email set up to recieve. 
+
 
 ### **Bugs**
 
-### Answer 4 was not displaying due to a bug in the loop interating through the questions. Fixed it by starting the loop at 1 instead of 0. 
+### 1
 * **Solution** 
-* Fixed it by starting the loop at 1 instead of 0.
 
-### Could not change anything within the modal for the tutorial.
-* **Solution** 
-* Used !important to make my custom style a priority. tried other solutions, but this was the only one that worked. 
 
-### The highscore was not displaying on the highscore tab
+### 2
 * **Solution** 
-* There was an error in the class of the highscore. when fixed the score displayed as expected.
 
-### quotation-marks in the question were rendered as &quote. 
+
+### 3
 * **Solution** 
-* Changed the rendering from JS to HTML and then it was fixed.
+
+
+### 4
+* **Solution** 
+
 
 [Back to Top](#table-of-contents)
 
@@ -258,16 +266,8 @@ The user was successfully able to send emails to the email set up to recieve.
 
 ## **Deployment**
 
-I deployed my Ways project website in the following way:
+I deployed my project in the following way:
 
-* Logged in to my GitHub account and locating my repository
-* Clicked on the settings icon (near the top right of the page)
-* Scrolled down the page to locate the 'GitHub Pages' section
-* Under "Source", select "Master" in the dropdown menu.
-* In the tab next to "Source", select "/root" if not already selected by default
-* Click save then the page will automatically refresh.
-* The link should show in a banner just above "GitHub Pages" section.
-* This deployed my project to the URL: (https://daniellima338.github.io/Into_The_Wild/)
 
 [Back to Top](#table-of-contents)
 
@@ -275,10 +275,10 @@ I deployed my Ways project website in the following way:
 --- 
 
 ## **Credits**
-I have drawn much inspiration from different posts on Stackoverflow. Credit is also given to [Michael Karen](https://michael-karen.medium.com/how-to-save-high-scores-in-local-storage-7860baca9d68), whom i have drawn inspiration from to the functionality of the highscore page. 
+
 
 ### **Acknowledgements**
-I want to thank the 3 people who tested the game(Kasper, René and Christina). They gave valuable feedback to optimize the game. 
+
 
 [Back to Top](#table-of-contents)
 
