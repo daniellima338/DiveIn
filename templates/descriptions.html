@@ -1,8 +1,6 @@
 {% extends "base.html" %}
 {% block content %}
-
-    <h2>Dive Destinations</h2>
-
+    
     {% for description in descriptions %}
         {{ description.continent }}<br>
         {{ description.country }}<br>
