@@ -16,7 +16,34 @@
     <title>DiveIn</title>
 </head>
 <body>
-
+    <header>
+        <!-- top navbar -->
+        <nav>
+            <div class="nav-wrapper navbar-fixed light-blue accent-4">
+                <a href="{{ url_for('get_descriptions') }}" class="brand-logo">DiveIn</a>
+                <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="fas fa-bars"></i></a>
+                <ul class="right hide-on-med-and-down">
+                    <li><a href="{{ url_for('get_descriptions') }}">Home</a></li>
+                    <li><a href="#">Dive Destinations</a></li>
+                    <li><a href="#">Dive map</a></li>
+                    <li><a href="#">Login</a></li>
+                    <li><a href="#">Log Out</a></li>
+                    <li><a href="#">Register</a></li>
+                </ul>
+            </div>
+        </nav>
+        
+        <!-- mobile sidenav -->
+        <ul class="sidenav" id="mobile-demo">
+        <h4 class="center-align light-blue-text accent-4 text-darken-4">DiveIn</h4>
+        <li><a href="{{ url_for('get_descriptions') }}">Home</a></li>
+        <li><a href="#">Dive Destinations</a></li>
+        <li><a href="#">Dive map</a></li>
+        <li><a href="#">Login</a></li>
+        <li><a href="#">Log Out</a></li>
+        <li><a href="#">Register</a></li>
+        </ul>
+    </header>
     {% block content %}
     {% endblock %}
 
