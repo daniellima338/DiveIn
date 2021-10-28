@@ -17,11 +17,22 @@ app.secret_key = os.environ.get("SECRET_KEY")
 
 mongo = PyMongo(app)
 
+
 @app.route("/")
-@app.route("/get_descriptions")
-def get_descriptions():
-    descriptions = list(mongo.db.country_description.find())
-    return render_template("descriptions.html", descriptions=descriptions)
+@app.route("/home")
+def home():
+    return render_template("home.html")
+
+
+@app.route("/")
+@app.route("/dive_destinations")
+def dive_destinations():
+    return render_template("dive_destinations.html")
+
+@app.route("/")
+@app.route("/dive_map")
+def dive_map():
+    return render_template("dive_map.html")
 
 @app.route("/register", methods=["GET", "POST"])
 def register():

@@ -19,32 +19,38 @@
 <body>
     <header>
         <!-- top navbar -->
-        <nav>
-            <div class="nav-wrapper navbar-fixed light-blue accent-4">
-                <a href="{{ url_for('get_descriptions') }}" class="brand-logo">DiveIn</a>
-                <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="fas fa-bars"></i></a>
-                <ul class="right hide-on-med-and-down">
-                    <li><a href="{{ url_for('get_descriptions') }}">Home</a></li>
-                    <li><a href="#">Dive Destinations</a></li>
-                    <li><a href="#">Dive map</a></li>
-                    <li><a href="#">Login</a></li>
-                    <li><a href="#">Log Out</a></li>
-                    <li><a href="{{ url_for('register') }}">Register</a></li>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container-fluid">
+              <a class="navbar-brand" href="{{ url_for('home') }}">DiveIn</a>
+              <form class="d-flex me-auto">
+                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-success" type="submit">Search</button>
+              </form>
+              <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                  <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="{{ url_for('home') }}">Home</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="{{ url_for('dive_destinations') }}">Dive Destinations</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="{{ url_for('dive_map') }}">Dive Map</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">Log Out</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="{{ url_for('register') }}">Register</a>
+                  </li>
                 </ul>
+              </div>
             </div>
-        </nav>
+          </nav>
         
-        <!-- mobile sidenav -->
-        <ul class="sidenav" id="mobile-demo">
-        <h4 class="center-align light-blue-text accent-4 text-darken-4">DiveIn</h4>
-        <li><a href="{{ url_for('get_descriptions') }}">Home</a></li>
-        <li><a href="#">Dive Destinations</a></li>
-        <li><a href="#">Dive map</a></li>
-        <li><a href="#">Login</a></li>
-        <li><a href="#">Log Out</a></li>
-        <li><a href="{{ url_for('register') }}">Register</a></li>
-        </ul>
-    </header>
     {% block content %}
     {% endblock %}
 
