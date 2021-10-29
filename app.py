@@ -18,21 +18,21 @@ app.secret_key = os.environ.get("SECRET_KEY")
 mongo = PyMongo(app)
 
 
-@app.route("/")
+
 @app.route("/home")
 def home():
-    return render_template("home.html")
+    return render_template("pages/home.html")
 
 
-@app.route("/")
-@app.route("/dive_destinations")
+
+@app.route("/destinations")
 def dive_destinations():
-    return render_template("dive_destinations.html")
+    return render_template("pages/dive_destinations.html")
 
-@app.route("/")
-@app.route("/dive_map")
+
+@app.route("/map")
 def dive_map():
-    return render_template("dive_map.html")
+    return render_template("pages/dive_map.html")
 
 @app.route("/register", methods=["GET", "POST"])
 def register():
@@ -54,7 +54,7 @@ def register():
         session["user"] = request.form.get("username").lower()
         flash("Registration Successful!")
         return redirect(url_for("profile", username=session["user"]))
-    return render_template("register.html")
+    return render_template("registration_page.html")
 
 
 if __name__ == "__main__":

@@ -1,0 +1,16 @@
+{% extends "layout/base.html" %}
+{% block content %}
+    <h3 class="center-align">Register</h3>
+
+    <div class="row center-align">
+        {% include 'components/auth/register.html' %}
+    </div>
+
+    <div class="row">
+        <div class="col s12">
+            <p class="center-align">
+                Already Registered? <a href="{{ url_for('home') }}" class="light-blue-text accent-4">Log In</a>
+            </p>
+        </div>
+    </div>
+{% endblock %} 
