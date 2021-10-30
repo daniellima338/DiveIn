@@ -2,18 +2,28 @@ html {
     font-size: 62.5%;
 }
 
-body {
-    font-family: "Raleway", sans-serif;
-    padding: 0;
-    margin: 0;
-    width: 100vw;
-    height: 120vh;
+#map {
+    height: 50%;
+  }
+#map1 {
+    height: 100%;
 }
+  
+  /* Optional: Makes the sample page fill the window. */
+  html,
+  body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+  }
 
 .center-align {
     display: flex;
     justify-content: center;
     align-items: center;
+    margin: auto;
+    padding: 5px;
+    border: 5pxs;
 }
 
 .box-index {
@@ -22,4 +32,5 @@ body {
     display:flex;
     justify-content: center;
     align-items: center;
+    z-index: 4;
 }

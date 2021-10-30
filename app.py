@@ -24,7 +24,6 @@ def home():
     return render_template("pages/home.html")
 
 
-
 @app.route("/destinations")
 def dive_destinations():
     return render_template("pages/dive_destinations.html")
