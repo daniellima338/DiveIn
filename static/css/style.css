@@ -85,3 +85,17 @@ h1 {
   position: relative;
   top: -15%;
 }
+
+/* Dive Destination page */
+
+.box-in {
+  border: 2px solid rgba(1, 104, 197, 0.5);
+  width: 50%;
+  position: relative;
+}
+
+/* flash message styling */
+
+.flashes {
+  line-height: 2;
+}

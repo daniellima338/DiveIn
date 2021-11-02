@@ -23,6 +23,11 @@ mongo = PyMongo(app)
 def home():
     return render_template("pages/home.html")
 
+@app.route("/")
+@app.route("/profile")
+def profile():
+    return render_template("pages/profile.html")
+
 
 @app.route("/destinations")
 def dive_destinations():
@@ -36,7 +41,7 @@ def dive_map():
 @app.route("/register", methods=["GET", "POST"])
 def register():
     if request.method == "POST":
-        #check if username already exists in db
+        # check if username already exists in db
         existing_user = mongo.db.users.find_one(
             {"username": request.form.get("username").lower()})
         if existing_user:
@@ -49,7 +54,7 @@ def register():
         }
         mongo.db.users.insert_one(register)
 
-        #put the new user into "session" cookie
+        # put the new user into "session" cookie
         session["user"] = request.form.get("username").lower()
         flash("Registration Successful!")
         return redirect(url_for("profile", username=session["user"]))
