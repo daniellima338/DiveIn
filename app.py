@@ -23,12 +23,6 @@ mongo = PyMongo(app)
 def home():
     return render_template("pages/home.html")
 
-@app.route("/")
-@app.route("/profile")
-def profile():
-    return render_template("pages/profile.html")
-
-
 @app.route("/destinations")
 def dive_destinations():
     return render_template("pages/dive_destinations.html")
@@ -88,7 +82,12 @@ def login():
             flash("Incorrect Username and/or Password")
             return redirect(url_for("home"))
 
-    return render_template("pages/home.html")
+@app.route("/profile/<username>", methods=["GET", "POST"])
+def profile(username):
+    # grab the session user's username from db
+    username = mongo.db.users.find_one(
+        {"username": session["user"]})["username"]
+    return render_template("pages/profile.html", username=username)
 
 if __name__ == "__main__":
     app.run(
