@@ -1,9 +1,9 @@
-<form class="s12 m8 offset-m2 center-align" method="POST" action="{{ url_for('register') }}">
+<form class="s12 m8 offset-m2 center-align" method="POST" action="{{ url_for('login') }}">
     <div class="card-panel">
         <!-- username -->
         <div class="row">
             <div class="input-field col s12 mb-3">
-                <i class="fas fa-user-plus prefix light-blue-text accent-4"></i>
+                <i class="fas fa-user-cog"></i>
                 <input id="username" name="username" type="text" pattern="^[a-zA-Z0-9]{5,15}$" class="validate" required>
                 <label for="username">Username</label>
             </div>
@@ -17,7 +17,7 @@
                 <label for="password">Password</label>
             </div>
         </div>
-        <!-- register -->
+        <!-- Login -->
         <div class="row mb-3">
             <button type="submit" class="col s12 registration-button">
                 Login <i class="fas fa-sign-in-alt"></i>
