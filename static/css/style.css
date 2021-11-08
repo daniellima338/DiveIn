@@ -2,15 +2,11 @@ html {
     font-size: 62.5%;
 }
 
+/* map styling */
 
-
-/* Always set the map height explicitly to define the size of the div
-       * element that contains the map. */
 #map {
   height: 80vh;
 }
-      
-/* Optional: Makes the sample page fill the window. */
 
 
 body {
@@ -22,6 +18,8 @@ body {
   font-size: 1.4rem;
 }
 
+/* font size */
+
 h3 {
   font-size: 2.8rem;
 }
@@ -29,7 +27,9 @@ h3 {
 h1 {
   font-size: 4.2rem;
 }
-  
+
+/* adjustments */
+
 .center-align {
     display: flex;
     justify-content: center;

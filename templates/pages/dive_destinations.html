@@ -7,7 +7,7 @@
         </div>
     </div>
     <div class="row">
-        <div class="offset-3 center-align box-in">
+        <div class="offset-3 center-align box-in mt-5">
             <p>
                 Do you want to know what destinations will give you the most amazing views under water? <br>
                 Check out the destinations below and add your own trips to the collection
@@ -15,17 +15,16 @@
         </div>
     </div>
     <div class="row">
-        <form action="{{ url_for('search') }}" method="POST" class="col-12">
-            <div class="row valign-wrapper center-align">
-                <div class="input-field col s12 m8">
-                    <i class="fas fa-search"></i>
+        <form action="{{ url_for('search') }}" method="POST">
+            <div class="row">
+                <div class="input-field center-align col-12 mt-5">
                     <input type="text" name="query" id="query" minlength="3" class="validate" placeholder="Search for a dive destination or a country here" required>
                     <label for="query"></label>
                 </div>
-                <div class="col s12 m4">
-                    <a href="{{ url_for('dive_destinations')}}" class="red btn text-shadow">Reset</a>
+                <div class="center-align col-12">
+                    <a href="{{ url_for('dive_destinations')}}" class="btn">Reset</a>
                     <button type="submit" class="btn text-shadow">
-                        <i class="fas fa-search left"></i> fa-search
+                        <i class="fas fa-search left"></i>
                     </button>
                 </div>
             </div>
