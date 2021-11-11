@@ -8,8 +8,10 @@
             <div class="col-md-10 col-lg-8 col-xl-7">
                 <div class="site-heading">
                     <h1>DiveIn</h1>
+                    {% if session.user == null %}
                     <span class="subheading"> {% include 'components/auth/login.html' %} </span>
                     <span class="subheading"> New Here? <a class="registration-link" href="{{ url_for('register') }}"> Register Account</a> </span>
+                    {% endif %}
                 </div>
             </div>
         </div>

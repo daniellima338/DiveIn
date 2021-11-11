@@ -1,8 +1,10 @@
 {% extends "layout/base.html" %}
 {% block content %}
 
-    <section class="center-align registration-section registration-background">
-        <div class="row jumbotron">
+    <section class="center-align registration-section registration-background"
+        style="background-image: url(' {{ url_for('static', filename='Images/diving3.jpg') }}')">
+        <div class="overlay"></div>
+        <div class="row">
             <div class="col-12 center-align mb-5">
                 <h1>Register below</h3>
             </div>

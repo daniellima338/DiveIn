@@ -25,7 +25,7 @@ def home():
 
 @app.route("/destinations")
 def dive_destinations():
-    destinations = list(mongo.db.destination.find())
+    destinations = mongo.db.destination.find()
     return render_template("pages/dive_destinations.html", destinations=destinations)
     
 @app.route("/search", methods=["GET", "POST"])
