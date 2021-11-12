@@ -15,6 +15,7 @@ body {
   width: 100%;
   margin: 5px;
   padding: 0;
+  font-family: "Ubuntu","Open Sans","Helvetica Neue","Helvetica","Arial",sans-serif;
 }
 
 a {
@@ -22,16 +23,24 @@ a {
 }
 
 /* font size */
-
+p {
+  font-size: 1.4rem;
+}
 h3 {
-  font-size: 2.8rem;
+  font-size: 2.2rem;
 }
 
 h2 {
-  font-size: 4.2rem;
+  font-size: 3rem;
 }
 h1 {
-  font-size: 5.6rem;
+  font-size: 3.8rem;
+}
+
+hr {
+  background-color: #a3deff;
+  margin: 5px;
+
 }
 
 /* adjustments */
@@ -44,7 +53,7 @@ h1 {
 
 .registration-link {
   margin-left: 5px;
-  color: rgba(1, 104, 197, 1);
+  color: #fff;
   font-size: 1.5rem;
 }
 
@@ -53,7 +62,6 @@ h1 {
 .registration-background {
   height: 100vh;
   width: 100%;
-  background-image: url(diving2.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -67,6 +75,7 @@ h1 {
   border: 2px solid rgba(1, 104, 197, 0.5);
   color: rgba(252, 252, 252, 1); 
   background-color: #1B1464;
+  width: 50%;
 }
 
 .registration-button:hover {
@@ -100,13 +109,30 @@ h1 {
   justify-content: space-around;
 }
 
+/* Profile page */
+
+.nav-link {
+  color: #1B1464;
+}
 .img-dive-destinations {
   height: 300px;
   width: 300px;
+}
+
+.fa-pencil-alt {
+  color: #1B1464;
+}
+
+.fa-pencil-alt:hover {
+  color: rgba(1, 104, 197, 0.5);
 }
 /* flash message styling */
 
 .flashes {
   line-height: 2;
+}
+
+.show-password {
+  font-size: 1rem;
 }
 

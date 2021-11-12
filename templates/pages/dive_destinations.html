@@ -36,95 +36,33 @@
                         <i class="fas fa-search"></i>
                     </button>
                 </div>
-<!-- Asia -->  
-<div class="row mt-5">
-    <div class="col">
-        <h2>Europe</h2>
-    </div>
-</div>
+<!-- Europe -->
+        <div class="row mt-5">
+            <div class="col">
+                <h2>Countries</h2>
+            </div>
+        </div>
+
 <div class="row container">
     {% for destination in destinations %}
-            {% if destination.continent == "Europe" %}
-                <div class="col-4">
-                    <a href="#">
-                        <img class="img-dive-destinations" src="{{ destination.image_of_place }}" alt="Diving in various places">
-                        <p>{{ destination.country }}</p>
-                    </a>
-                </div>
-            {% elif destination.continent == "Asia" %}
-                <div class="col-4">
-                    <a href="#">
-                        <img class="img-dive-destinations" src="{{ destination.image_of_place }}" alt="Diving in various places">
-                        <p>{{ destination.country }}</p>
-                    </a>
-                </div>
-            {% endif %}
+        {% if destination.continent == "Europe" %}
+            <div class="col-sm-12 col-md-6 col-lg-4">
+                <a href="#">
+                    <img class="img-dive-destinations" src="{{ destination.image_of_place }}" alt="Diving in various places">
+                    <p>{{ destination.country }}</p>
+                </a>
+            </div>
+            <!-- Asia -->
+        {% elif destination.continent == "Asia" %}
+            <div class="col-sm-12 col-md-6 col-lg-4">
+                <a href="#">
+                    <img class="img-dive-destinations" src="{{ destination.image_of_place }}" alt="Diving in various places">
+                    <p>{{ destination.country }}</p>
+                </a>
+            </div>
+        {% endif %}
     {% endfor %}
 </div>
 
-
-
-    <div class="row mt-5">
-        <div class="col">
-            <h2>Asia</h2>
-        </div>
-    </div>
-    <div class="row space-around">
-        <div class="col-sm-12 col-md-6 col-lg-4">
-            <a href="#">
-            <img class="img-dive-destinations"
-                src="https://images.unsplash.com/photo-1544551763-46a013bb70d5?ixid
-                =MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1170&q=80"
-                alt="Diving in Malaysia">
-            <p>Malaysia</p>
-            </a>
-        </div>
-        <div class="col-sm-12 col-md-6 col-lg-4">
-            <a href="#">
-            <img class="img-dive-destinations"
-                src="https://images.unsplash.com/photo-1483683804023-6ccdb62f86ef?ixid
-                =MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=300&q=150"
-                alt="Diving in Thailand">
-            <p>Thailand</p>
-            </a>
-
-        </div>
-        <div class="col-sm-12 col-md-6 col-lg-4">
-            <a href="#">
-            <img class="img-dive-destinations"
-                src="https://images.unsplash.com/photo-1503177847378-d2048487fa46?ixid
-                =MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1074&q=80"
-                alt="Diving in Myanmar">
-            <p>Myanmar</p>
-            </a>
-        </div>
-        <div class="col-sm-12 col-md-6 col-lg-4">
-            <a href="#">
-            <img class="img-dive-destinations"
-                src="https://images.unsplash.com/photo-1586508577428-120d6b072945?ixlib=rb-1.2.1&ixid
-                =MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=300&q=150"
-                alt="Diving in The Phillipines">
-            <p>Philippines</p>
-            </a>
-        </div>
-        <div class="col-sm-12 col-md-6 col-lg-4">
-            <a href="#">
-            <img class="img-dive-destinations"
-                src="https://images.unsplash.com/photo-1534081333815-ae5019106622?ixlib=rb-1.2.1&ixid
-                =MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1074&q=80"
-                alt="Diving in Indonesia">
-            <p>Indonesia</p>
-            </a>
-        </div>
-        <div class="col-sm-12 col-md-6 col-lg-4">
-            <a href="#">
-            <img class="img-dive-destinations"
-                src="https://images.unsplash.com/photo-1551244072-5d12893278ab?ixlib=rb-1.2.1&ixid
-                =MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1632&q=80"
-                alt="Diving in Micronesia">
-            <p>Micronesia</p>
-            </a>
-        </div>
-    </div>
 
 {% endblock %}
