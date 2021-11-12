@@ -92,6 +92,26 @@ def login():
             return redirect(url_for("home"))
 
 
+
+@app.route("/edit_username/<user_id>", methods=["GET", "POST"])
+def update_username(user_id):
+    if request.method == "POST":
+        # check if username already exists in db
+        username = mongo.db.users.find_one(
+            {"username": session["user"]})["username"]
+        if username:
+            flash("Username already exists")
+            return redirect(url_for("profile"))
+        
+        update_username = {
+            "username": request.form.get("username").lower()
+        }
+
+    mongo.db.users.update(username, update_username)
+    flash("Username Succesfully Updated!")
+    return redirect(url_for("profile", username=session["user"]))
+
+
 @app.route("/profile/<username>", methods=["GET", "POST"])
 def profile(username):
     # grab the session user's username from db
