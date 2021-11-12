@@ -19,15 +19,16 @@ mongo = PyMongo(app)
 
 
 @app.route("/")
-@app.route("/home")
 def home():
-    return render_template("pages/home.html")
+    return render_template("pages/home.html", API_KEY=retrieve_api_key())
+
 
 @app.route("/destinations")
 def dive_destinations():
     destinations = mongo.db.destination.find()
     return render_template("pages/dive_destinations.html", destinations=destinations)
-    
+
+
 @app.route("/search", methods=["GET", "POST"])
 def search():
     query = request.form.get("query")
@@ -37,7 +38,8 @@ def search():
 
 @app.route("/map")
 def dive_map():
-    return render_template("pages/dive_map.html")
+    return render_template("pages/dive_map.html", API_KEY=retrieve_api_key())
+
 
 @app.route("/register", methods=["GET", "POST"])
 def register():
@@ -89,6 +91,7 @@ def login():
             flash("Incorrect Username and/or Password")
             return redirect(url_for("home"))
 
+
 @app.route("/profile/<username>", methods=["GET", "POST"])
 def profile(username):
     # grab the session user's username from db
@@ -107,6 +110,11 @@ def logout():
     flash("You have been logged out")
     session.pop("user")
     return redirect(url_for("home"))
+
+
+def retrieve_api_key():
+    return os.environ.get("API_KEY")
+
 
 if __name__ == "__main__":
     app.run(

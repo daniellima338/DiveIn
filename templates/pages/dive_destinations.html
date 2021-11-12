@@ -37,14 +37,33 @@
                     </button>
                 </div>
 <!-- Asia -->  
-{% for destination in destinations %}
-    {{ destination.image_of_place }} <br>
-    {{ destination.country }} <br>
+<div class="row mt-5">
+    <div class="col">
+        <h2>Europe</h2>
+    </div>
+</div>
+<div class="row container">
+    {% for destination in destinations %}
+            {% if destination.continent == "Europe" %}
+                <div class="col-4">
+                    <a href="#">
+                        <img class="img-dive-destinations" src="{{ destination.image_of_place }}" alt="Diving in various places">
+                        <p>{{ destination.country }}</p>
+                    </a>
+                </div>
+            {% elif destination.continent == "Asia" %}
+                <div class="col-4">
+                    <a href="#">
+                        <img class="img-dive-destinations" src="{{ destination.image_of_place }}" alt="Diving in various places">
+                        <p>{{ destination.country }}</p>
+                    </a>
+                </div>
+            {% endif %}
+    {% endfor %}
+</div>
 
 
 
-
-{% endfor %}
     <div class="row mt-5">
         <div class="col">
             <h2>Asia</h2>
@@ -85,7 +104,7 @@
                 src="https://images.unsplash.com/photo-1586508577428-120d6b072945?ixlib=rb-1.2.1&ixid
                 =MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=300&q=150"
                 alt="Diving in The Phillipines">
-            <p>Phillipines</p>
+            <p>Philippines</p>
             </a>
         </div>
         <div class="col-sm-12 col-md-6 col-lg-4">
@@ -108,69 +127,4 @@
         </div>
     </div>
 
-<!-- Europe -->
-    <div class="row mt-5">
-        <div class="col">
-            <h2>Europe</h2>
-        </div>
-    </div>
-    <div class="row space-around">
-        <div class="col-sm-12 col-md-6 col-lg-4">
-            <a href="#">
-            <img class="img-dive-destinations"
-                src="https://images.unsplash.com/photo-1570527243923-5847e9d30baf?ixlib=rb-1.2.1&ixid
-                =MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1633&q=80"
-                alt="Diving Malta">
-            <p>Malta</p>
-            </a>
-        </div>
-        <div class="col-sm-12 col-md-6 col-lg-4">
-            <a href="#">
-            <img class="img-dive-destinations"
-                src="https://images.unsplash.com/photo-1602287389013-cb4321544a54?ixlib=rb-1.2.1&ixid
-                =MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"
-                alt="Diving in Spain">
-            <p>Spain</p>
-            </a>
-
-        </div>
-        <div class="col-sm-12 col-md-6 col-lg-4">
-            <a href="#">
-            <img class="img-dive-destinations"
-                src="https://images.unsplash.com/photo-1589674919865-ab3574791875?ixid
-                =MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1170&q=80"
-                alt="Diving in Croatia">
-            <p>Croatia</p>
-            </a>
-        </div>
-        <div class="col-sm-12 col-md-6 col-lg-4">
-            <a href="#">
-            <img class="img-dive-destinations"
-                src="https://images.unsplash.com/photo-1555320732-826043f6c671?ixlib=rb-1.2.1&ixid
-                =MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"
-                alt="Diving in France">
-            <p>France</p>
-            </a>
-        </div>
-        <div class="col-sm-12 col-md-6 col-lg-4">
-            <a href="#">
-            <img class="img-dive-destinations"
-                src="https://images.unsplash.com/photo-1482274364774-a3c3e13adb3f?ixid
-                =MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1074&q=80"
-                alt="Diving in italy">
-            <p>italy</p>
-            </a>
-        </div>
-        <div class="col-sm-12 col-md-6 col-lg-4">
-            <a href="#">
-            <img class="img-dive-destinations"
-                src="https://images.unsplash.com/photo-1586019345944-3e0012578ef7?ixlib=rb-1.2.1&ixid
-                =MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1180&q=80"
-                alt="Diving in UK">
-            <p>United Kingdom</p>
-            </a>
-        </div>
-    </div>
-
-</div>
 {% endblock %}
