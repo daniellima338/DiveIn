@@ -84,8 +84,7 @@ def login():
                 #invalid password match
                 flash("Incorrect Username and/or Password")
                 #redirect is used to redirect a user back to another page
-                return redirect(url_for("login"))
-            
+                return redirect(url_for("login"))   
         else:
             #username doesn't exist
             flash("Incorrect Username and/or Password")
@@ -93,19 +92,19 @@ def login():
 
 
 
-@app.route("/edit_username/<user_id>", methods=["GET", "POST"])
-def update_username(user_id):
-    if request.method == "POST":
-        # check if username already exists in db
-        username = mongo.db.users.find_one(
-            {"username": session["user"]})["username"]
-        if username:
-            flash("Username already exists")
-            return redirect(url_for("profile"))
-        
-        update_username = {
-            "username": request.form.get("username").lower()
-        }
+@app.route("/edit_username", methods=["POST"])
+def update_username():
+    print("Entering user update")
+    # check if username already exists in db
+    username = mongo.db.users.find_one(
+        {"username": session["user"]})["username"]
+    if username:
+        flash("Username already exists")
+        return redirect(url_for("home"))
+           
+    update_username = {
+        "username": request.form.get("username").lower()
+    }
 
     mongo.db.users.update(username, update_username)
     flash("Username Succesfully Updated!")

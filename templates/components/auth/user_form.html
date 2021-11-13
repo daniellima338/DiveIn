@@ -1,11 +1,11 @@
-<form method="POST" action="{{ url_for('register') }}">
+<form method="POST" action="{{ url_for('update_username') }}">
     <div>
         <!-- username -->
         <div class="row">
             <div class="col s12 mb-3">
                 <i class="fas fa-user-plus"></i>
                 <input id="username" name="username" type="text" pattern="^[a-zA-Z0-9]{5,15}$" class="validate" placeholder="{{ username }}" required>
-                <a href="{{ url_for('update_username', user_id=user_id) }}"><i class="fas fa-pencil-alt"></i></a>
+                <a href="{{ url_for('update_username') }}"><i class="fas fa-pencil-alt"></i></a>
             </div>
         </div>
         <!-- password -->
@@ -16,5 +16,11 @@
                 pattern="^[a-zA-Z0-9]{5,15}$" class="validate" placeholder="*****" required>
                 <a href="#"><i class="fas fa-pencil-alt"></i></a>
             </div>
+        </div>
+                <!-- register -->
+        <div class="row mb-3 center-align">
+            <button type="submit" class="registration-button">
+                Update Profile <i class="fas fa-sign-in-alt"></i>
+            </button>
         </div>
 </form>
