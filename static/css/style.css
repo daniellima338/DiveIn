@@ -95,12 +95,6 @@ hr {
 
 /* Dive Destination page */
 
-.box-in {
-  border: 2px solid rgba(1, 104, 197, 0.5);
-  width: 50%;
-  position: relative;
-}
-
 #query {
   width: 50%;
 }
@@ -109,6 +103,11 @@ hr {
   justify-content: space-around;
 }
 
+.search-button {
+  text-decoration: none;
+  color: #1B1464;
+  background-color: #fff;
+}
 /* Profile page */
 
 .nav-link {

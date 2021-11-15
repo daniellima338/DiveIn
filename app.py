@@ -29,6 +29,11 @@ def dive_destinations():
     return render_template("pages/dive_destinations.html", destinations=destinations)
 
 
+@app.route("/add_dive")
+def add_dive():
+    return render_template("pages/add_dive.html")
+
+
 @app.route("/search", methods=["GET", "POST"])
 def search():
     query = request.form.get("query")
@@ -91,24 +96,27 @@ def login():
             return redirect(url_for("home"))
 
 
+# WIP. User not updating as expected
+# @app.route("/edit_username", methods=["GET", "POST"])
+# def edit_username():
+#     if request.method == "POST":
+#         # check if username already exists in db
+#         existing_user = mongo.db.users.find_one(
+#             {"username": request.form.get("username").lower()})
+#         if existing_user:
+#             flash("Username already exists")
+#             return redirect(url_for("register"))
 
-@app.route("/edit_username", methods=["POST"])
-def update_username():
-    print("Entering user update")
-    # check if username already exists in db
-    username = mongo.db.users.find_one(
-        {"username": session["user"]})["username"]
-    if username:
-        flash("Username already exists")
-        return redirect(url_for("home"))
-           
-    update_username = {
-        "username": request.form.get("username").lower()
-    }
+#         update_username = {
+#             "username": request.form.updateUser("username").lower(),
+#         }
+#         mongo.db.users.updateUser(update_username)
 
-    mongo.db.users.update(username, update_username)
-    flash("Username Succesfully Updated!")
-    return redirect(url_for("profile", username=session["user"]))
+#         # put the new user into "session" cookie
+#         session["user"] = request.form.get("username").lower()
+#         flash("Username successfully updated Successful!")
+#         return redirect(url_for("profile", username=session["user"]))
+#     return render_template("pages/profile.html")
 
 
 @app.route("/profile/<username>", methods=["GET", "POST"])
