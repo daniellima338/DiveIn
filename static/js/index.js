@@ -19,11 +19,5 @@ $(document).ready(function(){
   $('.collapsible').collapsible();
 });
 
-export default {
-  data() {
-    return {
-      value: null
-    }
-  }
-}
+
 

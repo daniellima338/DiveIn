@@ -16,19 +16,40 @@
             </div>
         </div>
     </header>
-        <section class="container center-align shadow p-3 mb-5 bg-white rounded">
-            <form method="POST" action="">
+        <section class="row center-align">
+            <form method="POST" action="" class="col-8 shadow p-3 mb-5 bg-white rounded">
                 <div class="row">
-                    <input type="country" name="country" class="form-control validate" id="country" placeholder="Country" required/>
-                    <select type="text" name="continent" class="form-control validate" id="continent" placeholder="Choose continent" required>
-                        <option>Choose continent</option>
-                    </select>
-                    <input type="place" name="place" class="form-control validate" id="place" placeholder="Place of dive" required/>
-                    <textarea rows="5" name="dive_description" class="form-control validate" 
-                    id="dive_description" placeholder="Describe your dive!" required></textarea>
-                    <label class="btn-sm btn-info mt-3 offset-4 col-4 center-align">
-                        <i class="fa fa-image"> </i>Upload an image<input type="file" style="display: none;"  name="image_of_place" required>
-                    </label>
+                    <div class="col">
+                        <input type="country" name="country" class="form-control validate" id="country" placeholder="Country" required/>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <select type="text" name="continent" class="form-control validate" id="continent" required>
+                            <option>Choose continent</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <input type="place" name="place" class="form-control validate" id="place" placeholder="Place of dive" required/>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <textarea rows="5" name="dive_description" class="form-control validate" 
+                        id="dive_description" placeholder="Describe your dive!" required>
+                        </textarea>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <label class="btn-sm btn-info mt-3 offset-4 col-4 center-align">
+                            <i class="fa fa-image"> </i>Upload an image<input type="file" style="display: none;"  name="image_of_place" required>
+                        </label>
+                    </div>
+                </div>
+
                 </div>
                 <div class="row offset-3 col-6">
                     <button type="submit" class="btn-info mt-2">Update your dives</button>
