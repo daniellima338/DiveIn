@@ -6,12 +6,24 @@ function initMap() {
     zoom: 8})};
 
 
-function myFunction() {
+function show_password() {
   var x = document.getElementById("password");
   if (x.type === "password") {
     x.type = "text";
   } else {
     x.type = "password";
+  }
+}
+
+$(document).ready(function(){
+  $('.collapsible').collapsible();
+});
+
+export default {
+  data() {
+    return {
+      value: null
+    }
   }
 }
 

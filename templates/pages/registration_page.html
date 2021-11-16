@@ -1,20 +1,17 @@
 {% extends "layout/base.html" %}
 {% block content %}
-<header class="masthead registration-background" style="background-image: url(' {{ url_for('static', filename='Images/diving3.jpg') }}')">
-    <div class="overlay"></div>
-    <div class="container">
-        <div class="row center-align">
-            <div class="col-md-10 col-lg-8 col-xl-7">
-                <div class="site-heading">
-                    <h1>Register Below</h1>
-                    <span class="subheading"> {% include 'components/auth/register.html' %} </span>
-                    <span class="subheading"> Already registered? <a class="registration-link" href="{{ url_for('register') }}"> Log In</a> </span>
+    <header class="masthead registration-background" style="background-image: url(' {{ url_for('static', filename='Images/diving3.jpg') }}')">
+        <div class="overlay"></div>
+        <div class="container">
+            <div class="row center-align">
+                <div class="col-md-10 col-lg-8 col-xl-7">
+                    <div class="site-heading">
+                        <h1>Register Below</h1>
+                        <span class="subheading"> {% include 'components/auth/register.html' %} </span>
+                        <span class="subheading"> Already registered? <a class="registration-link" href="{{ url_for('register') }}"> Log In</a> </span>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-</header>
-
-    
-    
+    </header>
 {% endblock %} 

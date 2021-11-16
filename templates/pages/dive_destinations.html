@@ -1,22 +1,22 @@
 {% extends "layout/base.html" %}
 {% block content %}
-<header class="masthead" style="background-image: url(' {{ url_for('static', filename='Images/diving1.jpg') }}')">
-    <div class="overlay"></div>
-    <div class="container position-relative px-4 px-lg-5">
-        <div class="row gx-4 gx-lg-5 justify-content-center">
-            <div class="col-md-10 col-lg-8 col-xl-7">
-                <div class="site-heading">
-                    <h1>Diving Destinations</h1>
-                    <span class="subheading">
-                        Learn about the best diving spots in the world!
-                    </span>
+    <header class="masthead" style="background-image: url(' {{ url_for('static', filename='Images/diving1.jpg') }}')">
+        <div class="overlay"></div>
+        <div class="container position-relative px-4 px-lg-5">
+            <div class="row gx-4 gx-lg-5 justify-content-center">
+                <div class="col-md-10 col-lg-8 col-xl-7">
+                    <div class="site-heading">
+                        <h1>Diving Destinations</h1>
+                        <span class="subheading">
+                            Learn about the best diving spots in the world!
+                        </span>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-</header>
-<div class="container">
-    <h1>Diving Destinations</h1>
+    </header>
+    <div class="container">
+        <h1>Diving Destinations</h1>
         <p>
             Maybe you want to go diving with sea turtles in Thailand, or see corals in Indonesia. Whatever you prefer
             you can find information about the various dive sites in the world here. Not only can you find information
@@ -24,7 +24,7 @@
             experiences. In this way we can help each other get the best experiences with diving!
         </p>
         <form action="{{ url_for('search') }}" method="POST" class="row">
-            <div class="input-field mt-5">
+            <div class="input-field mt-2">
                 <input type="text" name="query" id="query" minlength="3" class="validate"
                     placeholder="Search for a dive destination or a country here" required>
                 <label for="query"></label>
@@ -36,33 +36,36 @@
                 </button>
             </div>
         </form>
-<!-- Europe -->
+        <!-- Europe -->
         <div class="row mt-5">
             <div class="col">
                 <h2>Countries</h2>
             </div>
         </div>
 
-<div class="row container mt-5">
-    {% for destination in destinations %}
-        {% if destination.continent == "Europe" %}
-            <div class="col-sm-12 col-md-6 col-lg-4">
-                <a href="#">
-                    <img class="img-dive-destinations" src="{{ destination.image_of_place }}" alt="Diving in various places">
-                    <p>{{ destination.country }}</p>
-                </a>
-            </div>
-            <!-- Asia -->
-        {% elif destination.continent == "Asia" %}
-            <div class="col-sm-12 col-md-6 col-lg-4">
-                <a href="#">
-                    <img class="img-dive-destinations" src="{{ destination.image_of_place }}" alt="Diving in various places">
-                    <p>{{ destination.country }}</p>
-                </a>
-            </div>
-        {% endif %}
-    {% endfor %}
-</div>
+        <div class="row container center-align mt-5">
+            {% for destination in destinations %}
+                {% if destination.continent == "Europe" %}
+                    <div class="col-sm-12 col-md-6 col-lg-4">
+                        <a href="#">
+                            <img class="img-dive-destinations" src="{{ destination.image_of_place }}"
+                                alt="Diving in various places">
+                            <p>{{ destination.country }}</p>
+                        </a>
+                    </div>
+                    <!-- Asia -->
+                {% elif destination.continent == "Asia" %}
+                    <div class="col-sm-12 col-md-6 col-lg-4">
+                        <a href="#">
+                            <img class="img-dive-destinations" src="{{ destination.image_of_place }}"
+                                alt="Diving in various places">
+                            <p>{{ destination.country }}</p>
+                        </a>
+                    </div>
+                {% endif %}
+            {% endfor %}
+        </div>
+    </div>
 
 
 {% endblock %}

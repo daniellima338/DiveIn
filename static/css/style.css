@@ -11,8 +11,9 @@ html {
 
 body {
   color: #1B1464; 
-  height: 100%;
+
   width: 100%;
+  height: 100%;
   margin: 5px;
   padding: 0;
   font-family: "Ubuntu","Open Sans","Helvetica Neue","Helvetica","Arial",sans-serif;

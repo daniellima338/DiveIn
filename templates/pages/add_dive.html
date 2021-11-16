@@ -1,19 +1,38 @@
 {% extends "layout/base.html" %}
 {% block content %}
 
-<header class="masthead" style="background-image: url(' {{ url_for('static', filename='Images/diving5.jpg') }}')">
-    <div class="overlay"></div>
-    <div class="container position-relative px-4 px-lg-5">
-        <div class="row gx-4 gx-lg-5 justify-content-center">
-            <div class="col-md-10 col-lg-8 col-xl-7">
-                <div class="site-heading">
-                    <h1>Add Dive</h1>
-                    <span class="subheading">
-                        Tell others about your amazing dive experiences
-                    </span>
+    <header class="masthead" style="background-image: url(' {{ url_for('static', filename='Images/diving5.jpg') }}')">
+        <div class="overlay"></div>
+        <div class="container position-relative px-4 px-lg-5">
+            <div class="row gx-4 gx-lg-5 justify-content-center">
+                <div class="col-md-10 col-lg-8 col-xl-7">
+                    <div class="site-heading">
+                        <h1>Add Dive</h1>
+                        <span class="subheading">
+                            Tell others about your amazing dive experiences
+                        </span>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-</header>
+    </header>
+        <section class="container center-align" method="POST" action="#">
+            <form>
+                <div class="row">
+                    <input type="country" name="country" class="form-control" id="country_name" placeholder="Country" required/>
+                    <select type="text" name="continent" class="form-control" id="continent" placeholder="Choose continent" required>
+                        <option>Choose continent</option>
+                    </select>
+                    <textarea rows="5" name="dive_description" class="form-control" id="dive_description" placeholder="Describe your dive!" required></textarea>
+                    <label class="btn-sm btn-info mt-3 offset-4 col-4 center-align">
+                        <i class="fa fa-image"></i>Upload an image<input type="file" style="display: none;"  name="image">
+                    </label>
+                </div>
+                <div class="row offset-3 col-6">
+                    <button type="submit" class="btn-info mt-2">Update your dives</button>
+                </div>
+            </form>
+        </section>
+
+      
 {% endblock %}

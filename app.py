@@ -18,22 +18,20 @@ app.secret_key = os.environ.get("SECRET_KEY")
 mongo = PyMongo(app)
 
 
+# Home page
 @app.route("/")
 def home():
     return render_template("pages/home.html", API_KEY=retrieve_api_key())
 
 
+# Route to dive destinations
 @app.route("/destinations")
 def dive_destinations():
     destinations = mongo.db.destination.find()
     return render_template("pages/dive_destinations.html", destinations=destinations)
 
 
-@app.route("/add_dive")
-def add_dive():
-    return render_template("pages/add_dive.html")
-
-
+# Search function
 @app.route("/search", methods=["GET", "POST"])
 def search():
     query = request.form.get("query")
@@ -41,11 +39,13 @@ def search():
     return render_template("pages/dive_destinations.html", destinations=destinations)
 
 
+# Route to map site
 @app.route("/map")
 def dive_map():
     return render_template("pages/dive_map.html", API_KEY=retrieve_api_key())
 
 
+# Register function
 @app.route("/register", methods=["GET", "POST"])
 def register():
     if request.method == "POST":
@@ -69,6 +69,7 @@ def register():
     return render_template("pages/registration_page.html")
 
 
+# Login function
 @app.route("/login", methods=["GET", "POST"])
 def login():
     if request.method == "POST":
@@ -96,41 +97,46 @@ def login():
             return redirect(url_for("home"))
 
 
-# WIP. User not updating as expected
+# # WIP. User not updating as expected
 # @app.route("/edit_username", methods=["GET", "POST"])
 # def edit_username():
 #     if request.method == "POST":
 #         # check if username already exists in db
 #         existing_user = mongo.db.users.find_one(
 #             {"username": request.form.get("username").lower()})
-#         if existing_user:
-#             flash("Username already exists")
-#             return redirect(url_for("register"))
 
 #         update_username = {
-#             "username": request.form.updateUser("username").lower(),
+#             "username": request.form.get("username").lower()
 #         }
-#         mongo.db.users.updateUser(update_username)
 
+#         try:
+#             mongo.db.users.update(update_username)
+#             flash("Username successfully updated Successful!")
+        
+#             session["user"] = request.form.get("username").lower()
+
+#             return redirect(url_for("profile", username=session["user"]))
+#         except:
+#             flash("Error updating the username")
 #         # put the new user into "session" cookie
-#         session["user"] = request.form.get("username").lower()
-#         flash("Username successfully updated Successful!")
-#         return redirect(url_for("profile", username=session["user"]))
+
 #     return render_template("pages/profile.html")
 
 
+# Profile page 
 @app.route("/profile/<username>", methods=["GET", "POST"])
 def profile(username):
     # grab the session user's username from db
     username = mongo.db.users.find_one(
         {"username": session["user"]})["username"]
+    destinations = list(mongo.db.destination.find())
 
     if session["user"]:
-        return render_template("pages/profile.html", username=username)
+        return render_template("pages/profile.html", username=username, destinations=destinations)
 
     return redirect(url_for("home"))
 
-
+# Log out function
 @app.route("/logout")
 def logout():
     #remove user from session cookies
@@ -139,6 +145,14 @@ def logout():
     return redirect(url_for("home"))
 
 
+# Add a dive function
+@app.route("/add_dive")
+def add_dive():
+    destinations = mongo.db.destination.find()
+    return render_template("pages/add_dive.html", destinations=destinations)
+
+
+# Get API_KEY from env file
 def retrieve_api_key():
     return os.environ.get("API_KEY")
 
