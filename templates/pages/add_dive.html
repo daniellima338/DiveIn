@@ -16,16 +16,18 @@
             </div>
         </div>
     </header>
-        <section class="container center-align" method="POST" action="#">
-            <form>
+        <section class="container center-align shadow p-3 mb-5 bg-white rounded">
+            <form method="POST" action="">
                 <div class="row">
-                    <input type="country" name="country" class="form-control" id="country_name" placeholder="Country" required/>
-                    <select type="text" name="continent" class="form-control" id="continent" placeholder="Choose continent" required>
+                    <input type="country" name="country" class="form-control validate" id="country" placeholder="Country" required/>
+                    <select type="text" name="continent" class="form-control validate" id="continent" placeholder="Choose continent" required>
                         <option>Choose continent</option>
                     </select>
-                    <textarea rows="5" name="dive_description" class="form-control" id="dive_description" placeholder="Describe your dive!" required></textarea>
+                    <input type="place" name="place" class="form-control validate" id="place" placeholder="Place of dive" required/>
+                    <textarea rows="5" name="dive_description" class="form-control validate" 
+                    id="dive_description" placeholder="Describe your dive!" required></textarea>
                     <label class="btn-sm btn-info mt-3 offset-4 col-4 center-align">
-                        <i class="fa fa-image"></i>Upload an image<input type="file" style="display: none;"  name="image">
+                        <i class="fa fa-image"> </i>Upload an image<input type="file" style="display: none;"  name="image_of_place" required>
                     </label>
                 </div>
                 <div class="row offset-3 col-6">
