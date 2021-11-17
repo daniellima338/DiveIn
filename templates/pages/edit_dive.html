@@ -7,9 +7,9 @@
             <div class="row gx-4 gx-lg-5 justify-content-center">
                 <div class="col-md-10 col-lg-8 col-xl-7">
                     <div class="site-heading">
-                        <h1>Add Dive</h1>
+                        <h1>Edit Dive</h1>
                         <span class="subheading">
-                            Tell others about your amazing dive experiences
+                            Do you need to change your dive?
                         </span>
                     </div>
                 </div>
@@ -18,7 +18,7 @@
     </header>
 
     <section class="row center-align">
-        <form method="POST" action="{{ url_for('add_dive') }}" class="col-8 shadow p-3 mb-5 bg-white rounded">
+        <form method="POST" action="{{ url_for('edit_dive', destination_id=destination._id) }}" class="col-8 shadow p-3 mb-5 bg-white rounded">
             <!-- List of continents -->
             <div class="row">
                 <div class="col">

@@ -126,6 +126,12 @@ hr {
 .fa-pencil-alt:hover {
   color: rgba(1, 104, 197, 0.5);
 }
+
+.accordion {
+  height: 30vh;
+}
+
+
 /* flash message styling */
 
 .flashes {

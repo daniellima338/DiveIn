@@ -29,30 +29,43 @@
         {% include 'components/auth/user_form.html' %}
     </div>
 
-    <div class="row">
-        <h3 class="col-3">Your Dive Destinations</h3>
-        <a href="{{ url_for('add_dive') }}" class="btn btn-primary btn-sm col-2" role="button" aria-disabled="true">Add
-            Dive</a>
-    </div>
+    <hr>
 
-    <div class="accordion" id="accordionExample">
-        <div class="accordion-item">
-            {% for destination in destinations %}
-                <h2 class="accordion-header" id="headingOne">
-                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#{{ continent }}" aria-expanded="true" aria-controls="{{ continent }}">
-                        {{ continent }}
-                    </button>
-                </h2>
-            {% for destination in destinations %}
-                <div id="{{ continent }}" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
-                    <div class="accordion-body">
-                        <strong>{{ destination.country }}</strong>
-                    </div>
-                </div>
-            {% endfor %}
-        {% endfor %}
+    <div class="container">
+        <div class="row mt-5">
+            <h3 class="col">Your Dive Destinations</h3>
         </div>
-      </div>
+        <div class="row mb-5">
+            <a href="{{ url_for('add_dive') }}" class="btn btn-primary col-4 mt-5" role="button"
+                aria-disabled="true">Add Dive</a>
+        </div>
 
+        <div class="accordion mt-5" id="myDives">
+            {% for destination in destinations %}
+                {% if destination.created_by %}
+                    <div class="accordion-item">
+                        
+                        <h2 class="accordion-header" id="headingOne">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#{{ destination.country }}" 
+                            aria-expanded="true" aria-controls="{{ destination.country }}">
+                                <div class="col-9">
+                                    <strong> {{ destination.country }}</strong> : {{ destination.place }}
+                                </div>
+                            </button>
+                        </h2>
+                        <div id="{{ destination.country }}" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#myDives">
+                            <div class="accordion-body">
+                                <p>{{ destination.dive_description }}</p>
+                                <p><i>{{ destination.continent }}</i></p>
+                                <div class="col-3 btn-small">
+                                    <a href=" {{ url_for('edit_dive', destination_id=destination._id) }}" class="btn btn-primary">Edit Dive</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                {% endif %}
+            {% endfor %}
+        </div>
+    </div>
 
 {% endblock %}

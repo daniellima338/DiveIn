@@ -27,7 +27,7 @@ def home():
 # Route to dive destinations
 @app.route("/destinations")
 def dive_destinations():
-    destinations = mongo.db.destination.find()
+    destinations = list(mongo.db.destination.find())
     return render_template("pages/dive_destinations.html", destinations=destinations)
 
 
@@ -130,10 +130,10 @@ def profile(username):
     # grab the session user's username from db
     username = mongo.db.users.find_one(
         {"username": session["user"]})["username"]
-    destinations = list(mongo.db.destination.find())
+    destinations = list(mongo.db.destination.find({"created_by": username }))
 
     if session["user"]:
-        return render_template("pages/profile.html", username=username, destinations=destinations)
+        return render_template("pages/profile.html", destinations=destinations, username=username)
 
     return redirect(url_for("home"))
 
@@ -167,11 +167,20 @@ def add_dive():
     continents = mongo.db.continents.find().sort("continent_name", 1)
     return render_template("pages/add_dive.html", continents=continents)
 
+
+@app.route("/edit_dive/<destination_id>", methods=["GET", "POST"])
+def edit_dive(destination_id):
+    destination = mongo.db.destination.find_one({"_id": ObjectId(destination_id)})
+
+    continents = mongo.db.continents.find().sort("continent_name", 1)
+    return render_template("pages/edit_dive.html", destination=destination, continents=continents)
+
+
 # # Function does not work after i add new entries to the database
 # # Changing list to map
 # def group_by_continent(destination):
 #     new_dest = {}
-#     for continent in destination:
+#     for destination in destinations:
 #         if destination["continent"] in new_dest: 
 #             new_dest[destination["continent"]].append(destination)
 #         else:
