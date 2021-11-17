@@ -23,9 +23,13 @@
             <div class="row">
                 <div class="col">
                     <select name="continent" class="form-control validate" id="continent" required>
-                        <option value="" disabled selected>Choose Continent</option>
+                        <option value="" disabled>Choose Continent</option>
                         {% for continent in continents %}
-                            <option value="{{ continent.continent_name }}">{{ continent.continent_name }}</option>
+                            {% if continent.continent_name == destination.continent %}
+                                <option value="{{ continent.continent_name }}" selected>{{ continent.continent_name }}</option>
+                            {% else %}
+                                <option value="{{ continent.continent_name }}">{{ continent.continent_name }}</option>
+                            {% endif %}
                         {% endfor %}
                     </select>
                     <label for="continent"></label>
@@ -35,22 +39,23 @@
             <div class="row">
                 <div class="col">
                     <input type="country" name="country" class="form-control validate" id="country"
-                        placeholder="Country" required />
+                        value="{{destination.country }}" required />
                 </div>
             </div>
             <!-- Country of dive -->
             <div class="row">
                 <div class="col">
                     <input type="place" name="place" class="form-control validate" id="place"
-                        placeholder="Place of Dive" required />
+                        value="{{ destination.place }}"  required />
                 </div>
             </div>
             <!-- Dive description -->
             <div class="row">
                 <div class="col">
-                    <textarea rows="5" name="dive_description" class="form-control validate" id="dive_description"
-                        required>Describe your dive!
-                        </textarea>
+                    <textarea rows="5" name="dive_description" 
+                        class="form-control validate" id="dive_description" required>
+                        {{- destination.dive_description -}}
+                    </textarea>
                 </div>
             </div>
             <!-- File Upload -->
@@ -58,15 +63,21 @@
                 <div class="center-align mt-5">
                     <label class="btn btn-info">
                         <i class="fa fa-image"> </i>Upload an image<input type="image" style="display: none;"
-                            name="image_of_place" required>
+                            name="image_of_place" value="{{ destination.image_of_place }}" required>
                     </label>
                 </div>
             </div>
             </div>
+
             <!-- submit button -->
-            <div class="row">
-                <div class="center-align">
-                    <button type="submit" class="btn btn-info mt-2">Update your dives</button>
+            <div class="row mx-auto center-align">
+                <div class="offset-1 col-1">
+
+                    <!-- cancel button -->
+                    <a href="{{ url_for('profile', username=session['user']) }}" class="btn btn-info center-align">Cancel</a>
+                </div>
+                <div class="col-2">
+                    <button type="submit" class="btn btn-info">Update your dives</button>
                 </div>
             </div>
         </form>

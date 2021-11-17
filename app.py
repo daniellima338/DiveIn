@@ -170,8 +170,22 @@ def add_dive():
 
 @app.route("/edit_dive/<destination_id>", methods=["GET", "POST"])
 def edit_dive(destination_id):
-    destination = mongo.db.destination.find_one({"_id": ObjectId(destination_id)})
+    if request.method == "POST":
+        dive = {
+            "continent": request.form.get("continent"),
+            "country": request.form.get("country"),
+            "place": request.form.get("place"),
+            "dive_description": request.form.get("dive_description"),
+            "image_of_place": request.form.get("image_of_place"),
+            "created_by": session["user"]
+        }
 
+        mongo.db.destination.update({"_id": ObjectId(destination_id)}, dive)
+        flash("Your Dive is updated!")
+        return redirect(url_for(
+                        "profile", username=session["user"]))
+
+    destination = mongo.db.destination.find_one({"_id": ObjectId(destination_id)})
     continents = mongo.db.continents.find().sort("continent_name", 1)
     return render_template("pages/edit_dive.html", destination=destination, continents=continents)
 
