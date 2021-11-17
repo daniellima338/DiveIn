@@ -16,46 +16,61 @@
             </div>
         </div>
     </header>
-        <section class="row center-align">
-            <form method="POST" action="" class="col-8 shadow p-3 mb-5 bg-white rounded">
-                <div class="row">
-                    <div class="col">
-                        <input type="country" name="country" class="form-control validate" id="country" placeholder="Country" required/>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col">
-                        <select type="text" name="continent" class="form-control validate" id="continent" required>
-                            <option>Choose continent</option>
-                        </select>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col">
-                        <input type="place" name="place" class="form-control validate" id="place" placeholder="Place of dive" required/>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col">
-                        <textarea rows="5" name="dive_description" class="form-control validate" 
-                        id="dive_description" placeholder="Describe your dive!" required>
-                        </textarea>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col">
-                        <label class="btn-sm btn-info mt-3 offset-4 col-4 center-align">
-                            <i class="fa fa-image"> </i>Upload an image<input type="file" style="display: none;"  name="image_of_place" required>
-                        </label>
-                    </div>
-                </div>
 
+    <section class="row center-align">
+        <form method="POST" action="{{ url_for('add_dive') }}" class="col-8 shadow p-3 mb-5 bg-white rounded">
+            <!-- List of continents -->
+            <div class="row">
+                <div class="col">
+                    <select name="continent" class="form-control validate" id="continent" required>
+                        <option value="" disabled selected>Choose Continent</option>
+                        {% for continent in continents%}
+                            <option value="{{ continent.continent_name }}">{{ continent.continent_name }}</option>
+                        {% endfor %}
+                    </select>
+                    <label for="continent"></label>
                 </div>
-                <div class="row offset-3 col-6">
-                    <button type="submit" class="btn-info mt-2">Update your dives</button>
+            </div>
+            <!-- Country of dive -->
+            <div class="row">
+                <div class="col">
+                    <input type="country" name="country" class="form-control validate" id="country"
+                        placeholder="Country" required />
                 </div>
-            </form>
-        </section>
+            </div>
+            <!-- Country of dive -->
+            <div class="row">
+                <div class="col">
+                    <input type="place" name="place" class="form-control validate" id="place"
+                        placeholder="Place of Dive" required />
+                </div>
+            </div>
+            <!-- Dive description -->
+            <div class="row">
+                <div class="col">
+                    <textarea rows="5" name="dive_description" class="form-control validate" id="dive_description"
+                        required>Describe your dive!
+                        </textarea>
+                </div>
+            </div>
+            <!-- File Upload -->
+            <div class="row">
+                <div class="center-align mt-5">
+                    <label class="btn btn-info">
+                        <i class="fa fa-image"> </i>Upload an image<input type="file" style="display: none;"
+                            name="image_of_place" required>
+                    </label>
+                </div>
+            </div>
+            </div>
+            <!-- submit button -->
+            <div class="row">
+                <div class="center-align">
+                    <button type="submit" class="btn btn-info mt-2">Update your dives</button>
+                </div>
+            </div>
+        </form>
+    </section>
 
       
 {% endblock %}

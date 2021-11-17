@@ -39,6 +39,7 @@ def search():
     return render_template("pages/dive_destinations.html", destinations=destinations)
 
 
+
 # Route to map site
 @app.route("/map")
 def dive_map():
@@ -90,7 +91,7 @@ def login():
                 #invalid password match
                 flash("Incorrect Username and/or Password")
                 #redirect is used to redirect a user back to another page
-                return redirect(url_for("login"))   
+                return redirect(url_for("login"))  
         else:
             #username doesn't exist
             flash("Incorrect Username and/or Password")
@@ -146,10 +147,36 @@ def logout():
 
 
 # Add a dive function
-@app.route("/add_dive")
+@app.route("/add_dive", methods=["GET", "POST"])
 def add_dive():
-    destinations = mongo.db.destination.find()
-    return render_template("pages/add_dive.html", destinations=destinations)
+    if request.method == "POST":
+        dive = {
+            "continent": request.form.get("continent"),
+            "country": request.form.get("country"),
+            "place": request.form.get("place"),
+            "dive_description": request.form.get("dive_description"),
+            "image_of_place": request.form.get("image_of_place"),
+            "created_by": session["user"]
+        }
+
+        mongo.db.destination.insert_one(dive)
+        flash("Your Dive is added to your collection!")
+        return redirect(url_for(
+                        "profile", username=session["user"]))
+
+    continents = mongo.db.continents.find().sort("continent_name", 1)
+    return render_template("pages/add_dive.html", continents=continents)
+
+# # Function does not work after i add new entries to the database
+# # Changing list to map
+# def group_by_continent(destination):
+#     new_dest = {}
+#     for continent in destination:
+#         if destination["continent"] in new_dest: 
+#             new_dest[destination["continent"]].append(destination)
+#         else:
+#             new_dest[destination["continent"]] = [destination]
+#     return new_dest
 
 
 # Get API_KEY from env file

@@ -35,24 +35,24 @@
             Dive</a>
     </div>
 
-
-    <div class="accordion mt-5" id="diveaccordion">
-        {% for destination in destinations %}
+    <div class="accordion" id="accordionExample">
         <div class="accordion-item">
-            <h2 class="accordion-header" id="headingOne">
-                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne"
-                    aria-expanded="true" aria-controls="collapseOne">
-                    <strong>{{ destination.country }}</strong> : {{ destination.continent }}
-                </button>
-            </h2>
-            <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne"
-                data-bs-parent="#diveaccordion">
-                <div class="accordion-body">
-                    <p> {{ destination.dive_description }} </p>
+            {% for destination in destinations %}
+                <h2 class="accordion-header" id="headingOne">
+                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#{{ continent }}" aria-expanded="true" aria-controls="{{ continent }}">
+                        {{ continent }}
+                    </button>
+                </h2>
+            {% for destination in destinations %}
+                <div id="{{ continent }}" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                    <div class="accordion-body">
+                        <strong>{{ destination.country }}</strong>
+                    </div>
                 </div>
-            </div>
-        </div>
+            {% endfor %}
         {% endfor %}
-    </div>
+        </div>
+      </div>
+
 
 {% endblock %}

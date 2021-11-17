@@ -43,27 +43,19 @@
             </div>
         </div>
 
-        <div class="row container center-align mt-5">
+        <div class="row container mt-4">
             {% for destination in destinations %}
-                {% if destination.continent == "Europe" %}
-                    <div class="col-sm-12 col-md-6 col-lg-4">
-                        <a href="#">
-                            <img class="img-dive-destinations" src="{{ destination.image_of_place }}"
-                                alt="Diving in various places">
-                            <p>{{ destination.country }}</p>
-                        </a>
-                    </div>
-                    <!-- Asia -->
-                {% elif destination.continent == "Asia" %}
-                    <div class="col-sm-12 col-md-6 col-lg-4">
-                        <a href="#">
-                            <img class="img-dive-destinations" src="{{ destination.image_of_place }}"
-                                alt="Diving in various places">
-                            <p>{{ destination.country }}</p>
-                        </a>
-                    </div>
-                {% endif %}
+                <H1>{{ destination.continent }}</H1>
+                {% for destination in destinations %}
+                        <div class="col-sm-12 col-md-6 col-lg-4 mb-3">
+                            <h2>{{ destination.country }}</h2>
+                            <img class="img-dive-destinations" src="{{ destination.image_of_place }}" alt="Diving in various places">
+                            <p><i>{{ destination.dive_description }}</i></p>
+                            <p>created by: {{ destination.created_by }} </p>
+                        </div>
+                {% endfor %}
             {% endfor %}
+        </div>
         </div>
     </div>
 
