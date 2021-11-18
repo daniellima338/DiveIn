@@ -190,6 +190,13 @@ def edit_dive(destination_id):
     return render_template("pages/edit_dive.html", destination=destination, continents=continents)
 
 
+@app.route("/delete_dive/<destination_id>")
+def delete_dive(destination_id):
+    mongo.db.destination.remove({"_id": ObjectId(destination_id)})
+    flash("Your Dive is updated!")
+    return redirect(url_for(
+                    "profile", username=session["user"]))
+
 # # Function does not work after i add new entries to the database
 # # Changing list to map
 # def group_by_continent(destination):

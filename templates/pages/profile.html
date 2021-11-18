@@ -58,7 +58,8 @@
                                 <p>{{ destination.dive_description }}</p>
                                 <p><i>{{ destination.continent }}</i></p>
                                 <div class="col-3 btn-small">
-                                    <a href=" {{ url_for('edit_dive', destination_id=destination._id) }}" class="btn btn-primary">Edit Dive</a>
+                                    <a href="{{ url_for('delete_dive', destination_id=destination._id) }}" class="btn btn-primary">Delete Dive</a>
+                                    <a href="{{ url_for('edit_dive', destination_id=destination._id) }}" class="btn btn-primary">Edit Dive</a>
                                 </div>
                             </div>
                         </div>
