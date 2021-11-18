@@ -57,10 +57,14 @@
                             <div class="accordion-body">
                                 <p>{{ destination.dive_description }}</p>
                                 <p><i>{{ destination.continent }}</i></p>
-                                <div class="col-3 btn-small">
+                                <div class="row center-align">
+                                <div class="col-3 btn-lg">
                                     <a href="{{ url_for('delete_dive', destination_id=destination._id) }}" class="btn btn-primary">Delete Dive</a>
+                                </div>
+                                <div class="col-3 btn-lg">
                                     <a href="{{ url_for('edit_dive', destination_id=destination._id) }}" class="btn btn-primary">Edit Dive</a>
                                 </div>
+                            </div>
                             </div>
                         </div>
                     </div>
