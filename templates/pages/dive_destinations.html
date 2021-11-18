@@ -4,7 +4,7 @@
         <div class="overlay"></div>
         <div class="container position-relative px-4 px-lg-5">
             <div class="row gx-4 gx-lg-5 justify-content-center">
-                <div class="col-md-10 col-lg-8 col-xl-7">
+                <div class="col-md-10 col-lg-8 col-xl-7 shadow-lg rounded">
                     <div class="site-heading">
                         <h1>Diving Destinations</h1>
                         <span class="subheading">
@@ -32,7 +32,7 @@
         </div>
         <section>
             <div class="row">
-                <form action="{{ url_for('search') }}" method="POST" class="row">
+                <form action="{{ url_for('search') }}" method="POST">
                     <div class="input-field mt-2">
                         <input type="text" name="query" id="query" minlength="3" class="validate"
                             placeholder="Search for a dive destination or a country here" required>
@@ -46,13 +46,12 @@
                     <i class="fas fa-search"></i>
                 </button>
             </div>
-
+            {% if destinations|length > 0 %}
             <div class="row mt-5">
                 <div class="col">
                     <h1>Countries</h1>
                 </div>
             </div>
-
             <!-- Europe -->
             <h2>Europe</h2>
             <div class="row container mt-4">
@@ -140,7 +139,9 @@
             </div>
         </section>
     </div>
-
+    {% else %}
+        <h1 class="text-danger">No Results Found</h1>
+    {% endif %}
 
 
 

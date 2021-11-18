@@ -27,9 +27,7 @@ function show_password() {
   }
 }
 
-$(document).ready(function(){
-  $('.collapsible').collapsible();
-});
+
 
 
 
