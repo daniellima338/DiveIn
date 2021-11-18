@@ -38,7 +38,7 @@
                             placeholder="Search for a dive destination or a country here" required>
                         <label for="query"></label>
                     </div>
-                </form>
+                
             </div>
             <div class="row">
                 <a href="{{ url_for('dive_destinations')}}" class="col-1 btn"><i class="fas fa-eraser"></i></a>
@@ -46,6 +46,7 @@
                     <i class="fas fa-search"></i>
                 </button>
             </div>
+                </form>
             {% if destinations|length > 0 %}
             <div class="row mt-5">
                 <div class="col">
@@ -53,7 +54,9 @@
                 </div>
             </div>
             <!-- Europe -->
-            <h2>Europe</h2>
+
+                <h2>Europe</h2>
+                
             <div class="row container mt-4">
                 {% for destination in destinations %}
                     {% if destination.continent == "Europe" %}

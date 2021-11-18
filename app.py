@@ -1,10 +1,10 @@
 import os
 from flask import (
-    Flask, flash, render_template, 
+    Flask, flash, render_template,
     redirect, request, session, url_for)
 from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
-from werkzeug.security import generate_password_hash, check_password_hash 
+from werkzeug.security import generate_password_hash, check_password_hash
 if os.path.exists("env.py"):
     import env
 
@@ -28,16 +28,18 @@ def home():
 @app.route("/destinations")
 def dive_destinations():
     destinations = list(mongo.db.destination.find())
-    return render_template("pages/dive_destinations.html", destinations=destinations)
+    return render_template(
+        "pages/dive_destinations.html", destinations=destinations)
 
 
 # Search function
 @app.route("/search", methods=["GET", "POST"])
 def search():
     query = request.form.get("query")
-    destinations = list(mongo.db.destination.find({"$text": {"$search": query}}))
-    return render_template("pages/dive_destinations.html", destinations=destinations)
-
+    destinations = list(mongo.db.destination.find(
+        {"$text": {"$search": query}}))
+    return render_template(
+        "pages/dive_destinations.html", destinations=destinations)
 
 
 # Route to map site
@@ -74,26 +76,26 @@ def register():
 @app.route("/login", methods=["GET", "POST"])
 def login():
     if request.method == "POST":
-        #check if username exists in db
+        # check if username exists in db
         existing_user = mongo.db.users.find_one(
             {"username": request.form.get("username").lower()})
 
         if existing_user:
-            #ensure hashed password matches user input
+            # ensure hashed password matches user input
             if check_password_hash(
                 existing_user["password"], request.form.get("password")):
-                    session["user"] = request.form.get("username").lower()
-                    flash("Welcome, {}".format(
-                        request.form.get("username")))
-                    return redirect(url_for(
+                session["user"] = request.form.get("username").lower()
+                flash("Welcome, {}".format(
+                    request.form.get("username")))
+                return redirect(url_for(
                         "profile", username=session["user"]))
             else:
-                #invalid password match
+                # invalid password match
                 flash("Incorrect Username and/or Password")
-                #redirect is used to redirect a user back to another page
-                return redirect(url_for("login"))  
+                # redirect is used to redirect a user back to another page
+                return redirect(url_for("login"))
         else:
-            #username doesn't exist
+            # username doesn't exist
             flash("Incorrect Username and/or Password")
             return redirect(url_for("home"))
 
@@ -113,7 +115,6 @@ def login():
 #         try:
 #             mongo.db.users.update(update_username)
 #             flash("Username successfully updated Successful!")
-        
 #             session["user"] = request.form.get("username").lower()
 
 #             return redirect(url_for("profile", username=session["user"]))
@@ -124,23 +125,25 @@ def login():
 #     return render_template("pages/profile.html")
 
 
-# Profile page 
+# Profile page
 @app.route("/profile/<username>", methods=["GET", "POST"])
 def profile(username):
     # grab the session user's username from db
     username = mongo.db.users.find_one(
         {"username": session["user"]})["username"]
-    destinations = list(mongo.db.destination.find({"created_by": username }))
+    destinations = list(mongo.db.destination.find({"created_by": username}))
 
     if session["user"]:
-        return render_template("pages/profile.html", destinations=destinations, username=username)
+        return render_template(
+            "pages/profile.html", destinations=destinations, username=username)
 
     return redirect(url_for("home"))
+
 
 # Log out function
 @app.route("/logout")
 def logout():
-    #remove user from session cookies
+    # remove user from session cookies
     flash("You have been logged out")
     session.pop("user")
     return redirect(url_for("home"))
@@ -168,6 +171,7 @@ def add_dive():
     return render_template("pages/add_dive.html", continents=continents)
 
 
+# Edit Dive Function
 @app.route("/edit_dive/<destination_id>", methods=["GET", "POST"])
 def edit_dive(destination_id):
     if request.method == "POST":
@@ -185,11 +189,14 @@ def edit_dive(destination_id):
         return redirect(url_for(
                         "profile", username=session["user"]))
 
-    destination = mongo.db.destination.find_one({"_id": ObjectId(destination_id)})
+    destination = mongo.db.destination.find_one(
+        {"_id": ObjectId(destination_id)})
     continents = mongo.db.continents.find().sort("continent_name", 1)
-    return render_template("pages/edit_dive.html", destination=destination, continents=continents)
+    return render_template(
+        "pages/edit_dive.html", destination=destination, continents=continents)
 
 
+# Delete Dive Function
 @app.route("/delete_dive/<destination_id>")
 def delete_dive(destination_id):
     mongo.db.destination.remove({"_id": ObjectId(destination_id)})
@@ -202,7 +209,7 @@ def delete_dive(destination_id):
 # def group_by_continent(destination):
 #     new_dest = {}
 #     for destination in destinations:
-#         if destination["continent"] in new_dest: 
+#         if destination["continent"] in new_dest:
 #             new_dest[destination["continent"]].append(destination)
 #         else:
 #             new_dest[destination["continent"]] = [destination]
