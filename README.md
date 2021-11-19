@@ -48,7 +48,7 @@ If you have any feedback or questions, head over to my GitHub contact details an
 ## **Design Choices**
 
 ### Fonts
- I have visited [Google Fonts](https://fonts.google.com/ "Google Fonts") to explore the various options. The fonts used in this project are [Ubuntu] (https://fonts.google.com/specimen/Ubuntu?query=Ubuntu) in different sizes depending on the importance of the text. The font have a light readthrough and do not come of as strong to the eye. It goes well in line with the design of the webiste.
+ I have visited [Google Fonts](https://fonts.google.com/ "Google Fonts") to explore the various options. The font i use in this project are [Lobster] (https://fonts.google.com/specimen/Lobster#standard-styles). The font is itallic as has a wavy look, which fits well with the diving theme. 
 
 ### Icons
 I have used icons from the [Font Awesome library](https://fontawesome.com/ "Font Awesome"). There is a limited amount of icons. But they fit the corresponding text. 
@@ -82,9 +82,9 @@ In this way my content will be easily readable.
 --- 
 
 ## **Structure**
-The website structure is built with [Materialize](https://materializecss.com/).
-Materialize provides content for both CSS and JavaScript, as functionality with both is important.
-As Materialize is designed for mobile first, I will be certain that my website functions well on mobile. 
+The website structure is built with [Bootstrap](https://getbootstrap.com/).
+Bootstrap provides content for both CSS and JavaScript, as functionality with both is important.
+As Bootstrap is designed for mobile first, I will be certain that my website functions well on mobile. 
 
 ### Home Page
 
@@ -159,7 +159,7 @@ You can find my wireframes below:
 ### Libraries & Frameworks
 
 * [Font Awesome](https://fontawesome.com/)
-* [Materialize](https://materializecss.com/)
+* [Bootstrap](https://getbootstrap.com/)
 * [Google Fonts](https://fonts.google.com/)
 * [Jquery](https://jquery.com/)
 * [MongoDB](https://en.wikipedia.org/wiki/MongoDB)

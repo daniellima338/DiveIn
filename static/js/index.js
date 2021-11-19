@@ -1,6 +1,3 @@
-
-// Google map function
-let map;
 // Initialize and add the map
 function initMap() {
   // The location of Uluru
@@ -15,9 +12,26 @@ function initMap() {
     position: uluru,
     map: map,
   });
+  
+  google.maps.event.addListener(map, 'click', function(event) {
+  placeMarker(map, event.latLng);
+});
+
+function placeMarker(map, location) {
+  var marker = new google.maps.Marker({
+    position: location,
+    map: map
+  });
+  var infowindow = new google.maps.InfoWindow({
+    content: 'Latitude: ' + location.lat() +
+    '<br>Longitude: ' + location.lng()
+  });
+  infowindow.open(map,marker);
+}
 }
 
 
+// function to show password with onclick
 function show_password() {
   var x = document.getElementById("password");
   if (x.type === "password") {

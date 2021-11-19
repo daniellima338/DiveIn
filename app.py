@@ -3,6 +3,7 @@ from flask import (
     Flask, flash, render_template,
     redirect, request, session, url_for)
 from flask_pymongo import PyMongo
+import gridfs
 from bson.objectid import ObjectId
 from werkzeug.security import generate_password_hash, check_password_hash
 if os.path.exists("env.py"):
@@ -214,6 +215,22 @@ def delete_dive(destination_id):
 #         else:
 #             new_dest[destination["continent"]] = [destination]
 #     return new_dest
+
+def insert_image(request):
+    with open(request.GET["image_of_place"], "rb") as image_file:
+        encoded_string = base64.b64encode(image_file.read())
+        print(encoded_string)
+    abc=db.destination.insert({"image_of_place":encoded_string})
+    return HttpResponse("inserted")
+
+def retrieve_image(request):
+    data = db.destination.find()
+    data1 = json.loads(dumps(data))
+    img = data1[0]
+    img1 = img['image']
+    decode=img1.decode()
+    img_tag = '<img alt="sample" src="data:image/png;base64,{0}">'.format(decode)
+    return HttpResponse(img_tag)
 
 
 # Get API_KEY from env file
