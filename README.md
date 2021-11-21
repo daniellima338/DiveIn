@@ -8,6 +8,8 @@ DiveIn is a webstie for divers. Here you can find information about awesome dive
 Thank you for visiting my project!
 If you have any feedback or questions, head over to my GitHub contact details and feel free to reach out to me.
 
+[Link to live website](http://dive-in-project.herokuapp.com/)
+
 ---
 
 ## Table of contents 
