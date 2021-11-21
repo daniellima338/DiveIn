@@ -17,8 +17,9 @@
         </div>
     </header>
 
-    <section class="row center-align">
-        <form method="POST" action="{{ url_for('add_dive') }}" class="col-8 shadow p-3 mb-5 bg-white rounded">
+    <section>
+        
+        <form method="POST" action="{{ url_for('add_dive') }}" class="col-4 shadow p-3 mb-5 bg-white rounded container form-text-size">
             <!-- List of continents -->
             <div class="row">
                 <div class="col">
@@ -54,11 +55,11 @@
             </div>
             <!-- File Upload -->
             <div class="row">
-                <div class="center-align mt-5">
-                    <label class="btn btn-info">
-                        <i class="fa fa-image"> </i>Upload an image<input type="file" style="display: none;"
-                            name="image_of_place" required>
-                    </label>
+                <div class="center-align">
+                    <p class="form-text-size">Please upload the photo of your dive site to a free image hosting site
+                        (we recommend <a href="https://postimages.org/" target="_blank" aria-label="postimages.org">Postimages</a>)
+                        and paste the
+                        direct url for it here.<input id="image_of_place" name="image_of_place" class="form-control" type="url" maxlength="200" placeholder="https://..." required=""></p>
                 </div>
             </div>
             </div>

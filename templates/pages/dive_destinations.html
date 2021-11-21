@@ -133,7 +133,7 @@
                     {% if destination.continent == "Australia" %}
                         <div class="col-sm-12 col-md-6 col-lg-4 mb-3">
                             <h3>{{ destination.country }}</h3>
-                            <img class="img-dive-destinations" id="img_tag" src="{{ destination.image_of_place }}" alt="Diving in various places">
+                            <img class="img-dive-destinations" id="img_tag" onerror="this.onerror=null;this.src='https://placeimg.com/300/300/nature';" src="{{ destination.image_of_place }}" alt="Diving in various places">
                             <p><i>{{ destination.dive_description }}</i></p>
                             <p>created by: {{ destination.created_by }} </p>
                         </div>

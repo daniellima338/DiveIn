@@ -16,19 +16,6 @@
         </div>
     </header>
 
-    <div class="container">
-        <div class="navbar navbar-expand-lg">
-            <ul class="navbar-nav ms-auto">
-                <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="#">Change Username</a></li>
-                <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="#">Change Email</a></li>
-            </ul>
-        </div>
-        <hr>
-
-        <h1 class="mt-5">Your Account</h1>
-        {% include 'components/auth/user_form.html' %}
-    </div>
-
     <hr>
 
     <div class="container">
@@ -44,7 +31,6 @@
             {% for destination in destinations %}
                 {% if destination.created_by %}
                     <div class="accordion-item">
-                        
                         <h2 class="accordion-header" id="headingOne">
                             <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#{{ destination.country }}" 
                             aria-expanded="true" aria-controls="{{ destination.country }}">

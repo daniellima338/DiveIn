@@ -101,31 +101,6 @@ def login():
             return redirect(url_for("home"))
 
 
-# # WIP. User not updating as expected
-# @app.route("/edit_username", methods=["GET", "POST"])
-# def edit_username():
-#     if request.method == "POST":
-#         # check if username already exists in db
-#         existing_user = mongo.db.users.find_one(
-#             {"username": request.form.get("username").lower()})
-
-#         update_username = {
-#             "username": request.form.get("username").lower()
-#         }
-
-#         try:
-#             mongo.db.users.update(update_username)
-#             flash("Username successfully updated Successful!")
-#             session["user"] = request.form.get("username").lower()
-
-#             return redirect(url_for("profile", username=session["user"]))
-#         except:
-#             flash("Error updating the username")
-#         # put the new user into "session" cookie
-
-#     return render_template("pages/profile.html")
-
-
 # Profile page
 @app.route("/profile/<username>", methods=["GET", "POST"])
 def profile(username):

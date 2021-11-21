@@ -24,7 +24,7 @@ body {
 }
 
 a {
-  color: #fff;
+  color: #1B1464;
 }
 
 /* font size */
@@ -124,6 +124,11 @@ hr {
   width: 300px;
 }
 
+/* Add dive page */
+
+.form-text-size {
+  font-size: 1.5rem;
+}
 /* Profile page */
 
 .nav-link {
