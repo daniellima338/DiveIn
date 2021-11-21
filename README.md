@@ -1,6 +1,6 @@
 # **DiveIn**
 
-![Mokeup Image](assets/images/mock-up.png)
+![Mokeup Image](static/Images/mock_up.png)
 
 ## **Goal for this project** 
 DiveIn is a webstie for divers. Here you can find information about awesome dive spots around the world. But not only ccan you find information, you can also rate dives yourself, as well as add a dive spot to the given country. 
@@ -10,12 +10,61 @@ If you have any feedback or questions, head over to my GitHub contact details an
 
 ---
 
-
-
 ## Table of contents 
 
+- [**DiveIn**](#--divein--)
+  * [**Goal for this project**](#--goal-for-this-project--)
+  * [Table of contents](#table-of-contents)
+  * [**UX**](#--ux--)
+    + [**User Stories**](#--user-stories--)
+      - [User](#user)
+      - [Owner](#owner)
+      - [User Expectations](#user-expectations)
+  * [**Design Choices**](#--design-choices--)
+    + [Fonts](#fonts)
+    + [Icons](#icons)
+    + [Colors](#colors)
+    + [Changes made to color scheme](#changes-made-to-color-scheme)
+  * [<a></a>](#-a---a-)
+  * [**Structure**](#--structure--)
+    + [Home Page](#home-page)
+    + [Dive Destinations Page](#dive-destinations-page)
+    + [Dive Map Page](#dive-map-page)
+    + [Profile Page](#profile-page)
+    + [Add Dive Page](#add-dive-page)
+    + [Registration Page](#registration-page)
+    + [**Wireframes**](#--wireframes--)
+    + [Changes made to wireframes](#changes-made-to-wireframes)
+      - [Desktop Wireframes](#desktop-wireframes)
+      - [Tablet Wireframes](#tablet-wireframes)
+      - [Mobile Wireframes](#mobile-wireframes)
+    + [Features to be implemented](#features-to-be-implemented)
+  * [<a></a>](#-a---a--1)
+  * [**Technologies used**](#--technologies-used--)
+    + [Languages](#languages)
+    + [Libraries & Frameworks](#libraries---frameworks)
+    + [Tools](#tools)
+  * [<a></a>](#-a---a--2)
+  * [**Testing**](#--testing--)
+      - [User story: As a user I want to be able to find new diving spots.](#user-story--as-a-user-i-want-to-be-able-to-find-new-diving-spots)
+      - [User story: As a user I want to be able to showcase my own diving experiences.](#user-story--as-a-user-i-want-to-be-able-to-showcase-my-own-diving-experiences)
+      - [User story: As a user I want to se other peoples diving experiences.](#user-story--as-a-user-i-want-to-se-other-peoples-diving-experiences)
+      - [User story: As a user I want to be able understand what the website is about very quickly.](#user-story--as-a-user-i-want-to-be-able-understand-what-the-website-is-about-very-quickly)
+    + [**Bugs**](#--bugs--)
+      - [1 When the user uploaded a photo, the photo would not render on the page.](#1-when-the-user-uploaded-a-photo--the-photo-would-not-render-on-the-page)
+      - [2 The Dive destination page would not divide the dives into categories depending on continent using Jinja](#2-the-dive-destination-page-would-not-divide-the-dives-into-categories-depending-on-continent-using-jinja)
+      - [3 I accedently added my Google API key to the repository](#3-i-accedently-added-my-google-api-key-to-the-repository)
+  * [<a></a>](#-a---a--3)
+  * [**Deployment**](#--deployment--)
+    + [Local deployment](#local-deployment)
+    + [Using Mongo](#using-mongo)
+    + [Deployment to Heroku](#deployment-to-heroku)
+  * [<a></a>](#-a---a--4)
+    + [** Credit **](#---credit---)
+    + [**Acknowledgements**](#--acknowledgements--)
 
 <small><i><a href='http://ecotrust-canada.github.io/markdown-toc/'>Table of contents generated with markdown-toc</a></i></small>
+
 
 
 
@@ -72,7 +121,7 @@ The feel of the website should give you a feeling of the sensation of diving.
 I have used contract checker on Coolors in order to make sure that the contract is sufficient.
 In this way my content will be easily readable. 
 
-#### Changes made to color scheme
+### Changes made to color scheme
 
 I changed the colors from the original outlook, as i think the new colors suit the project better. initially i was thinking of having a blue background and white text, but i came to realize that a white background is more elegant, and the blue text fits very well on it. 
 
@@ -175,7 +224,6 @@ You can find my wireframes below:
 - [DNSPython](https://pypi.org/project/dnspython/) - DNS toolkit for Python.
 - [Flask-PyMongo](https://flask-pymongo.readthedocs.io/en/latest/) - Helpers to bridge Flask and PyMongo.
 
-
 ### Tools
 * [Git](https://git-scm.com/)
 * [GitPod](https://www.gitpod.io/)
@@ -256,18 +304,18 @@ The test has passed all the criteria and works like planned.
 
 ### **Bugs**
 
-### 1 When the user uploaded a photo, the photo would not render on the page.
+#### 1 When the user uploaded a photo, the photo would not render on the page.
 * **Solution** 
 
 The solution for this project has been to use a URL. I have provided the user a website to turn a image into a direct URL link, and from there they can pass it on to the website. 
 
-### 2 The Dive destination page would not divide the dives into categories depending on continent using Jinja
+#### 2 The Dive destination page would not divide the dives into categories depending on continent using Jinja
 
 * **Solution** 
 
 The issue was that the heading was replicated for each dive using a Jinja for-loop. I took the headings out and put them seperate to the for-loop. 
 
-### 3 I accedently added my Google API key to the repository
+#### 3 I accedently added my Google API key to the repository
 
 * **Solution**
 
