@@ -1,6 +1,6 @@
 {% extends "layout/base.html" %}
 {% block content %}
-<!-- Page Header-->
+    <!-- Page Header-->
     <header class="masthead" style="background-image: url(' {{ url_for('static', filename='Images/diving2.jpg') }}')">
         <div class="overlay"></div>
         <div class="container">
@@ -9,8 +9,8 @@
                     <div class="site-heading">
                         <h1>DiveIn</h1>
                         {% if session.user == null %}
-                        <span class="subheading"> {% include 'components/auth/login.html' %} </span>
-                        <span class="subheading"> New Here? <a class="registration-link" href="{{ url_for('register') }}"> Register Account</a> </span>
+                            <span class="subheading"> {% include 'components/auth/login.html' %} </span>
+                            <span class="subheading"> New Here? <a class="registration-link" href="{{ url_for('register') }}"> Register Account</a> </span>
                         {% endif %}
                     </div>
                 </div>
@@ -18,44 +18,44 @@
         </div>
     </header>
 
-    <section class="text-center center-align container">
-            <div class="mb-5">
-                <div class="row">
-                    <div class="col-12">
-                        <h1 class="text-uppercase">Are you a Diver?</h2>
-                    </div>
-                </div>
-                <div class="row space-around">
-                    <div class="col-sm-12 col-md-6 col-lg-4 mt-4">
-                        <h3 class="text-uppercase"><i class="fas fa-globe-europe"></i> Explore Dive Sites</h3>
-                        <hr class="my-4" />
-                        <p>
-                            Use our world dive map to effortlessly find dive sites and dive centers and start planning your
-                            next trip.
-                        </p>
-                    </div>
-
-                    <div class="col-sm-12 col-md-6 col-lg-4 mt-4">
-                        <h3 class="text-uppercase"><i class="fas fa-water"></i></i> Track Your Dives</h3>
-                        <hr class="my-4" />
-                        <p>
-                            Keep your memories in one place. Add your diving information, pictures, create wish lists and so
-                            much more.
-                        </p>
-                    </div>
-
-                    <div class="col-sm-12 col-md-6 col-lg-4 mt-4">
-                        <h3 class="text-uppercase"><i class="fas fa-pager"></i></i> Give your opinion</h3>
-                        <hr class="my-4" />
-                        <p>
-                            Tell others about your experience with a dive, so they know what to expect. Help other divers
-                            find the best spots in the world.
-                        </p>
-                    </div>
-                </div>
+    <!-- Information section -->
+    <section class="text-center container mb-5">
+        <div class="row">
+            <div class="col-12">
+                <h2 class="text-uppercase">Are you a Diver?</h2>
             </div>
+        </div>
+        <div class="row space-around">
+            <div class="col-sm-12 col-md-6 col-lg-4 mt-4">
+                <h3 class="text-uppercase"><i class="fas fa-globe-europe"></i> Explore Dive Sites</h3>
+                <hr class="my-4" />
+                <p>
+                    Use our world dive map to effortlessly find dive sites and dive centers and start planning your
+                    next trip.
+                </p>
+            </div>
+
+            <div class="col-sm-12 col-md-6 col-lg-4 mt-4">
+                <h3 class="text-uppercase"><i class="fas fa-water"></i> Track Your Dives</h3>
+                <hr class="my-4" />
+                <p>
+                    Keep your memories in one place. Add your diving information, pictures, create wish lists and so
+                    much more.
+                </p>
+            </div>
+
+            <div class="col-sm-12 col-md-6 col-lg-4 mt-4">
+                <h3 class="text-uppercase"><i class="fas fa-pager"></i> Give your opinion</h3>
+                <hr class="my-4" />
+                <p>
+                    Tell others about your experience with a dive, so they know what to expect. Help other divers
+                    find the best spots in the world.
+                </p>
+            </div>
+        </div>
     </section>
 
+    <!-- Dive Map -->
     <div id="map" class="mb-5"></div>
     
 {% endblock %}

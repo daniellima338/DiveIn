@@ -3,7 +3,7 @@
 
     <header class="masthead" style="background-image: url(' {{ url_for('static', filename='Images/diving5.jpg') }}')">
         <div class="overlay"></div>
-        <div class="container position-relative ">
+        <div class="container position-relative">
             <div class="row justify-content-center">
                 <div class="col-md-10 col-lg-8 col-xl-7 shadow-lg mt-5 rounded">
                     <div class="site-heading">
@@ -18,13 +18,12 @@
     </header>
 
     <section>
-        
         <form method="POST" action="{{ url_for('add_dive') }}" class="col-4 shadow p-3 mb-5 bg-white rounded container form-text-size">
             <!-- List of continents -->
             <div class="row">
-                <div class="col">
+                <div class="col-12">
                     <select name="continent" class="form-control validate" id="continent" required>
-                        <option value="" disabled selected>Choose Continent</option>
+                        <option disabled selected>Choose Continent</option>
                         {% for continent in continents %}
                             <option value="{{ continent.continent_name }}">{{ continent.continent_name }}</option>
                         {% endfor %}
@@ -34,21 +33,21 @@
             </div>
             <!-- Country of dive -->
             <div class="row">
-                <div class="col">
+                <div class="col-12">
                     <input type="country" name="country" class="form-control validate" id="country"
-                        placeholder="Country" required />
+                        placeholder="Country" required/>
                 </div>
             </div>
             <!-- Country of dive -->
             <div class="row">
-                <div class="col">
+                <div class="col-12">
                     <input type="place" name="place" class="form-control validate" id="place"
-                        placeholder="Place of Dive" required />
+                        placeholder="Place of Dive" required/>
                 </div>
             </div>
             <!-- Dive description -->
             <div class="row">
-                <div class="col">
+                <div class="col-12">
                     <textarea rows="5" name="dive_description" class="form-control validate" 
                     id="dive_description" placeholder="Describe your dive!"required></textarea>
                 </div>
@@ -57,11 +56,11 @@
             <div class="row">
                 <div class="center-align">
                     <p class="form-text-size">Please upload the photo of your dive site to a free image hosting site
-                        (we recommend <a href="https://postimages.org/" target="_blank" aria-label="postimages.org">Postimages</a>)
+                        (I recommend <a href="https://postimages.org/" target="_blank" aria-label="postimages.org">Postimages</a>)
                         and paste the
-                        direct url for it here.<input id="image_of_place" name="image_of_place" class="form-control" type="url" maxlength="200" placeholder="https://..." required=""></p>
+                        direct url for it here.<input id="image_of_place" name="image_of_place" class="form-control" 
+                        type="url" maxlength="200" placeholder="https://..." required=""></p>
                 </div>
-            </div>
             </div>
             <!-- submit button -->
             <div class="row">

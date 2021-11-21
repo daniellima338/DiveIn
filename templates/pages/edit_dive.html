@@ -21,9 +21,9 @@
         <form method="POST" action="{{ url_for('edit_dive', destination_id=destination._id) }}" class="col-8 shadow p-3 mb-5 bg-white rounded">
             <!-- List of continents -->
             <div class="row">
-                <div class="col">
-                    <select name="continent" class="form-control validate" id="continent" required>
-                        <option value="" disabled>Choose Continent</option>
+                <div class="col-12">
+                    <select name="continent" class="form-control validate form-text-size" id="continent" required>
+                        <option  disabled>Choose Continent</option>
                         {% for continent in continents %}
                             {% if continent.continent_name == destination.continent %}
                                 <option value="{{ continent.continent_name }}" selected>{{ continent.continent_name }}</option>
@@ -37,51 +37,49 @@
             </div>
             <!-- Country of dive -->
             <div class="row">
-                <div class="col">
-                    <input type="country" name="country" class="form-control validate" id="country"
+                <div class="col-12">
+                    <input type="country" name="country" class="form-control validate form-text-size" id="country"
                         value="{{destination.country }}" required />
                 </div>
             </div>
             <!-- Country of dive -->
             <div class="row">
-                <div class="col">
-                    <input type="place" name="place" class="form-control validate" id="place"
+                <div class="col-12">
+                    <input type="place" name="place" class="form-control validate form-text-size" id="place"
                         value="{{ destination.place }}"  required />
                 </div>
             </div>
             <!-- Dive description -->
             <div class="row">
-                <div class="col">
+                <div class="col-12">
                     <textarea rows="5" name="dive_description" 
-                        class="form-control validate" id="dive_description" required>
+                        class="form-control validate form-text-size" id="dive_description" required>
                         {{- destination.dive_description -}}
                     </textarea>
                 </div>
             </div>
             <!-- File Upload -->
             <div class="row">
-                <div class="mt-5">
-                    <label class="btn btn-info">
-                        <i class="fa fa-image"> </i>Upload an image<input type="image" style="display: none;"
-                            name="image_of_place" value="{{ destination.image_of_place }}" required>
-                    </label>
+                <div class="col-12">
+                    <p class="form-text-size">Please upload the photo of your dive site to a free image hosting site
+                        (I recommend <a href="https://postimages.org/" target="_blank" aria-label="postimages.org">Postimages</a>)
+                        and paste the
+                        direct url for it here.<input id="image_of_place" name="image_of_place" class="form-control" 
+                        type="url" maxlength="200" placeholder="https://..." required=""></p>
                 </div>
-            </div>
             </div>
 
             <!-- submit button -->
-            <div class="row mx-auto center-align">
-                <div class="offset-1 col-1">
-
+            <div class="row center-align">
+                <div class="col-1">
                     <!-- cancel button -->
-                    <a href="{{ url_for('profile', username=session['user']) }}" class="btn btn-info center-align">Cancel</a>
+                    <a href="{{ url_for('profile', username=session['user']) }}" class="btn btn-danger center-align">Cancel</a>
                 </div>
-                <div class="col-2">
+                <div class="col-3">
                     <button type="submit" class="btn btn-info">Update your dives</button>
                 </div>
             </div>
         </form>
     </section>
 
-      
 {% endblock %}

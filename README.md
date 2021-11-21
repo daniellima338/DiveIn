@@ -25,7 +25,6 @@ If you have any feedback or questions, head over to my GitHub contact details an
     + [Icons](#icons)
     + [Colors](#colors)
     + [Changes made to color scheme](#changes-made-to-color-scheme)
-  * [<a></a>](#-a---a-)
   * [**Structure**](#--structure--)
     + [Home Page](#home-page)
     + [Dive Destinations Page](#dive-destinations-page)
@@ -90,8 +89,7 @@ If you have any feedback or questions, head over to my GitHub contact details an
 * Understand the purpose of the webiste within a short time.
 * Find usefull information within the topic of diving.
 
-[Back to Top](#table-of-contents)
-<a></a>
+(#table-of-contents)
 --- 
 
 ## **Design Choices**

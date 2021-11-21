@@ -84,7 +84,8 @@ def login():
         if existing_user:
             # ensure hashed password matches user input
             if check_password_hash(
-                existing_user["password"], request.form.get("password")):
+                                    existing_user["password"], 
+                                    request.form.get("password")):
                 session["user"] = request.form.get("username").lower()
                 flash("Welcome, {}".format(
                     request.form.get("username")))
@@ -179,33 +180,6 @@ def delete_dive(destination_id):
     flash("Your Dive is updated!")
     return redirect(url_for(
                     "profile", username=session["user"]))
-
-# # Function does not work after i add new entries to the database
-# # Changing list to map
-# def group_by_continent(destination):
-#     new_dest = {}
-#     for destination in destinations:
-#         if destination["continent"] in new_dest:
-#             new_dest[destination["continent"]].append(destination)
-#         else:
-#             new_dest[destination["continent"]] = [destination]
-#     return new_dest
-
-def insert_image(request):
-    with open(request.GET["image_of_place"], "rb") as image_file:
-        encoded_string = base64.b64encode(image_file.read())
-        print(encoded_string)
-    abc=db.destination.insert({"image_of_place":encoded_string})
-    return HttpResponse("inserted")
-
-def retrieve_image(request):
-    data = db.destination.find()
-    data1 = json.loads(dumps(data))
-    img = data1[0]
-    img1 = img['image']
-    decode=img1.decode()
-    img_tag = '<img alt="sample" src="data:image/png;base64,{0}">'.format(decode)
-    return HttpResponse(img_tag)
 
 
 # Get API_KEY from env file

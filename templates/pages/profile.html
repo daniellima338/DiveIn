@@ -31,7 +31,7 @@
             {% for destination in destinations %}
                 {% if destination.created_by %}
                     <div class="accordion-item">
-                        <h2 class="accordion-header" id="headingOne">
+                        <h2 class="accordion-header" id="country_heading">
                             <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#{{ destination.country }}" 
                             aria-expanded="true" aria-controls="{{ destination.country }}">
                                 <div class="col-9">
@@ -39,18 +39,18 @@
                                 </div>
                             </button>
                         </h2>
-                        <div id="{{ destination.country }}" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#myDives">
+                        <div id="{{ destination.country }}" class="accordion-collapse collapse" aria-labelledby="country_heading" data-bs-parent="#myDives">
                             <div class="accordion-body">
                                 <p>{{ destination.dive_description }}</p>
                                 <p><i>{{ destination.continent }}</i></p>
                                 <div class="row center-align">
-                                <div class="col-3 btn-lg">
-                                    <a href="{{ url_for('delete_dive', destination_id=destination._id) }}" class="btn btn-primary">Delete Dive</a>
+                                    <div class="col-3 btn-lg">
+                                        <a href="{{ url_for('delete_dive', destination_id=destination._id) }}" class="btn btn-danger">Delete Dive</a>
+                                    </div>
+                                    <div class="col-3 btn-lg">
+                                        <a href="{{ url_for('edit_dive', destination_id=destination._id) }}" class="btn btn-primary">Edit Dive</a>
+                                    </div>
                                 </div>
-                                <div class="col-3 btn-lg">
-                                    <a href="{{ url_for('edit_dive', destination_id=destination._id) }}" class="btn btn-primary">Edit Dive</a>
-                                </div>
-                            </div>
                             </div>
                         </div>
                     </div>

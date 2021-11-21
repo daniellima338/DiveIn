@@ -1,16 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
 
+/* General */
+
 html {
     font-size: 62.5%;
-    font-family: "Lobster",sans-serif;
 }
-
-/* map styling */
-
-#map {
-  height: 60vh;
-}
-
 
 body {
   color: #1B1464; 
@@ -46,6 +40,7 @@ h1 {
   font-family: "Lobster",sans-serif;
 }
 
+/* Divider */
 hr {
   background-color: #a3deff;
   margin: 5px;
@@ -53,7 +48,6 @@ hr {
 }
 
 /* adjustments */
-
 .center-align {
     display: flex;
     justify-content: center;
@@ -67,7 +61,6 @@ hr {
 }
 
 /* registration-section */
-
 .registration-background {
   height: 100vh;
   width: 100%;
@@ -104,7 +97,6 @@ hr {
 
 
 /* Dive Destination page */
-
 #query {
   width: 50%;
 }
@@ -126,9 +118,22 @@ hr {
 
 /* Add dive page */
 
+input::placeholder {
+  font-size: 1.5rem;
+}
+
+textarea::placeholder {
+  font-size: 1.5rem;
+}
+
+option {
+  font-size: 1.5rem;
+}
+
 .form-text-size {
   font-size: 1.5rem;
 }
+
 /* Profile page */
 
 .nav-link {
@@ -148,7 +153,7 @@ hr {
 }
 
 .fas {
-  font-size: 2rem;
+  font-size: 2.5rem;
 }
 
 /* flash message styling */
@@ -159,5 +164,11 @@ hr {
 
 .show-password {
   font-size: 1rem;
+}
+
+/* map styling */
+
+#map {
+  height: 60vh;
 }
 
