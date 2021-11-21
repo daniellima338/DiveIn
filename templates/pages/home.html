@@ -9,8 +9,8 @@
                     <div class="site-heading">
                         <h1>DiveIn</h1>
                         {% if session.user == null %}
-                            <span class="subheading"> {% include 'components/auth/login.html' %} </span>
-                            <span class="subheading"> New Here? <a class="registration-link" href="{{ url_for('register') }}"> Register Account</a> </span>
+                            <div class="subheading"> {% include 'components/auth/login.html' %} </div>
+                            <div class="subheading"> New Here? <a class="registration-link" href="{{ url_for('register') }}"> Register Account</a> </div>
                         {% endif %}
                     </div>
                 </div>

@@ -31,7 +31,7 @@ function placeMarker(map, location) {
 }
 
 
-// function to show password with onclick
+// function to show password with onclick. 
 function show_password() {
   var x = document.getElementById("password");
   if (x.type === "password") {
