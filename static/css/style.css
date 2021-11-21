@@ -77,6 +77,7 @@ hr {
 .registration-section {
   color: #fff;
 }
+
 .registration-button {
   border-radius: 12px;
   border: 2px solid rgba(1, 104, 197, 0.5);
@@ -99,7 +100,6 @@ hr {
   background-color: #212529;
   opacity: 0.7;
 }
-
 
 /* Dive Destination page */
 #query {
