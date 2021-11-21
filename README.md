@@ -37,13 +37,18 @@ If you have any feedback or questions, head over to my GitHub contact details an
       - [Desktop Wireframes](#desktop-wireframes)
       - [Tablet Wireframes](#tablet-wireframes)
       - [Mobile Wireframes](#mobile-wireframes)
+    + [Database planing](#database-planing)
+      - [Users collection:](#users-collection-)
+        * [Schema](#schema)
+        * [Example](#example)
+      - [destination collection:](#destination-collection-)
+        * [Schema](#schema-1)
+        * [Example](#example-1)
     + [Features to be implemented](#features-to-be-implemented)
-  * [<a></a>](#-a---a--1)
   * [**Technologies used**](#--technologies-used--)
     + [Languages](#languages)
     + [Libraries & Frameworks](#libraries---frameworks)
     + [Tools](#tools)
-  * [<a></a>](#-a---a--2)
   * [**Testing**](#--testing--)
       - [User story: As a user I want to be able to find new diving spots.](#user-story--as-a-user-i-want-to-be-able-to-find-new-diving-spots)
       - [User story: As a user I want to be able to showcase my own diving experiences.](#user-story--as-a-user-i-want-to-be-able-to-showcase-my-own-diving-experiences)
@@ -53,18 +58,15 @@ If you have any feedback or questions, head over to my GitHub contact details an
       - [1 When the user uploaded a photo, the photo would not render on the page.](#1-when-the-user-uploaded-a-photo--the-photo-would-not-render-on-the-page)
       - [2 The Dive destination page would not divide the dives into categories depending on continent using Jinja](#2-the-dive-destination-page-would-not-divide-the-dives-into-categories-depending-on-continent-using-jinja)
       - [3 I accedently added my Google API key to the repository](#3-i-accedently-added-my-google-api-key-to-the-repository)
-  * [<a></a>](#-a---a--3)
+  * [<a></a>](#-a---a-)
   * [**Deployment**](#--deployment--)
     + [Local deployment](#local-deployment)
     + [Using Mongo](#using-mongo)
     + [Deployment to Heroku](#deployment-to-heroku)
-  * [<a></a>](#-a---a--4)
     + [** Credit **](#---credit---)
     + [**Acknowledgements**](#--acknowledgements--)
 
 <small><i><a href='http://ecotrust-canada.github.io/markdown-toc/'>Table of contents generated with markdown-toc</a></i></small>
-
-
 
 
 ## **UX**
@@ -89,7 +91,7 @@ If you have any feedback or questions, head over to my GitHub contact details an
 * Understand the purpose of the webiste within a short time.
 * Find usefull information within the topic of diving.
 
-(#table-of-contents)
+
 --- 
 
 ## **Design Choices**
@@ -123,9 +125,6 @@ In this way my content will be easily readable.
 
 I changed the colors from the original outlook, as i think the new colors suit the project better. initially i was thinking of having a blue background and white text, but i came to realize that a white background is more elegant, and the blue text fits very well on it. 
 
-[Back to Top](#table-of-contents)
-
-<a></a>
 --- 
 
 ## **Structure**
@@ -150,7 +149,6 @@ The Add Dive page is essentially a form the user fills. Here they put in contine
 
 ### Registration Page
 The registration page is very simple. You just put in a username and password. Then the user is created if the username is not used by others. 
-
 
 
 ### **Wireframes**
@@ -190,15 +188,74 @@ You can find my wireframes below:
 * [Login page](wireframes/mobile/Mobile_login.png)
 * [Add Dive page](wireframes/mobile/Mobile_add_dive_page.png)
 
+
+### Database planning 
+My database will contain 3 collections: users, continents and destinations. They look as following:
+
+#### Users collection:
+
+##### Schema
+
+```yaml
+{
+  "_id":          <ObjectID>,
+  "username":         <string>,
+  "password":     <string>,
+}
+```
+
+##### Example
+
+```yaml
+{
+  "_id":          <ObjectID>,
+  "username":     "Ulrik Olsen",
+  "password":     "iHaveaPassword123@",
+}
+```
+
+---
+
+#### destination collection:
+
+##### Schema
+
+```yaml
+{
+  "_id":              <ObjectID>,
+  "continent":        <string>,
+  "country":          <string>,
+  "dive_description": <string>,
+  "place":            <string>,
+  "image_of_place":   <string>,
+  "created_by":       <string>,
+}
+```
+
+##### Example
+
+```yaml
+{
+  "_id":              <ObjectID>,
+  "continent":        <Asia>,
+  "country":          <Vietnam>,
+  "dive_description": <This place is amazing. You are able to see every sea animal imaginable in the world. 
+                      Furthermore they preserve the area super well, and therefore there is no polution.>,
+  "place":            <Nha Trang>,
+  "image_of_place":   <https://images.unsplash.com/photo-1551244072-5d12893278ab?ixlib=rb-
+                      1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=
+                      format&fit=crop&w=1632&q=80>,
+  "created_by":       <ulrik>,
+}
+```
+
 ### Features to be implemented
 
 * A heatmap over where diving is good during different seasons.
 * Access to store with diving gear.
 * community forum, where users can discuss various subjects.
+* Google map functionality, where dives of users get shown on map upon dive entry. 
 
-[Back to Top](#table-of-contents)
-
-<a></a>
 --- 
 
 ## **Technologies used**
@@ -229,9 +286,6 @@ You can find my wireframes below:
 * [W3C HTML Validation Service](https://validator.w3.org/)
 * [W3C CSS Validation Service](https://jigsaw.w3.org/css-validator/) - Some bugs and warnings occure due to materialize. 
 
-[Back to Top](#table-of-contents)
-
-<a></a>
 --- 
 
 ## **Testing**
@@ -319,10 +373,6 @@ The issue was that the heading was replicated for each dive using a Jinja for-lo
 
 Sinse then i have regenerated the key, and put ekstra safety meassures in place.
 
-
-[Back to Top](#table-of-contents)
-
-<a></a>
 --- 
 
 ## **Deployment**
@@ -362,10 +412,6 @@ Sinse then i have regenerated the key, and put ekstra safety meassures in place.
 5. Enable automatic deployments from your GitHub by connecting accounts and selecting automatic deployment option. 
 6. Click 'Deploy branch' 
 
-
-[Back to Top](#table-of-contents)
-
-<a></a>
 --- 
 
 ### ** Credit **
@@ -374,6 +420,3 @@ I have drawn much inspiration from different posts on Stackoverflow. Credit is a
 ### **Acknowledgements**
 I want to thank the 3 people who tested the website(Andreas, Niels and Susanne). They gave valuable feedback to optimize the structure and feel of the website.
 
-[Back to Top](#table-of-contents)
-
-<a></a>
