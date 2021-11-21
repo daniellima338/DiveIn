@@ -18,7 +18,7 @@
 
     <div class="container">
         <div class="row">
-            <h1>Diving Experiences</h1>
+            <h2>Diving Experiences</h2>
         </div>
         <div class="row">
             <p>
@@ -54,16 +54,16 @@
             {% if destinations|length > 0 %}
             <div class="row mt-5">
                 <div class="col-12">
-                    <h1>Countries</h1>
+                    <h2>Countries</h2>
                 </div>
             </div>
             <!-- Europe -->
-            <h2>Europe</h2>
+            <h3>Europe</h3>
             <div class="row mt-4">
                 {% for destination in destinations %}
                     {% if destination.continent == "Europe" %}
                         <div class="col-sm-12 col-md-6 col-lg-4 mb-3">
-                            <h3>{{ destination.country }}</h3>
+                            <h4>{{ destination.country }}</h4>
                             <img class="img-dive-destinations" src="{{ destination.image_of_place }}" alt="Diving in various places">
                             <p><i>{{ destination.dive_description }}</i></p>
                             <p>created by: {{ destination.created_by }} </p>
@@ -73,12 +73,12 @@
             </div>
 
             <!-- Asia -->
-            <h2>Asia</h2>
+            <h3>Asia</h3>
             <div class="row mt-4">
                 {% for destination in destinations %}
                     {% if destination.continent == "Asia" %}
                         <div class="col-sm-12 col-md-6 col-lg-4 mb-3">
-                            <h3>{{ destination.country }}</h3>
+                            <h4>{{ destination.country }}</h4>
                             <img class="img-dive-destinations" src="{{ destination.image_of_place }}" alt="Diving in various places">
                             <p><i>{{ destination.dive_description }}</i></p>
                             <p>created by: {{ destination.created_by }} </p>
@@ -88,12 +88,12 @@
             </div>
 
             <!-- Africa -->
-            <h2>Africa</h2>
+            <h3>Africa</h3>
             <div class="row  mt-4">
                 {% for destination in destinations %}
                     {% if destination.continent == "Africa" %}
                         <div class="col-sm-12 col-md-6 col-lg-4 mb-3">
-                            <h3>{{ destination.country }}</h3>
+                            <h4>{{ destination.country }}</h4>
                             <img class="img-dive-destinations" src="{{ destination.image_of_place }}" alt="Diving in various places">
                             <p><i>{{ destination.dive_description }}</i></p>
                             <p>created by: {{ destination.created_by }} </p>
@@ -103,12 +103,12 @@
             </div>
 
             <!-- North America -->
-            <h2>North America</h2>
+            <h3>North America</h3>
             <div class="row mt-4">
                 {% for destination in destinations %}
                     {% if destination.continent == "North America" %}
                         <div class="col-sm-12 col-md-6 col-lg-4 mb-3">
-                            <h3>{{ destination.country }}</h3>
+                            <h4>{{ destination.country }}</h4>
                             <img class="img-dive-destinations" src="{{ destination.image_of_place }}" alt="Diving in various places">
                             <p><i>{{ destination.dive_description }}</i></p>
                             <p>created by: {{ destination.created_by }} </p>
@@ -118,12 +118,12 @@
             </div>
 
             <!-- South America -->
-            <h2>South America</h2>
+            <h3>South America</h3>
             <div class="row mt-4">
                 {% for destination in destinations %}
                     {% if destination.continent == "South America" %}
                         <div class="col-sm-12 col-md-6 col-lg-4 mb-3">
-                            <h3>{{ destination.country }}</h3>
+                            <h4>{{ destination.country }}</h4>
                             <img class="img-dive-destinations" src="{{ destination.image_of_place }}" alt="Diving in various places">
                             <p><i>{{ destination.dive_description }}</i></p>
                             <p>created by: {{ destination.created_by }} </p>
@@ -133,12 +133,12 @@
             </div>
 
             <!-- Australia -->
-            <h2>Australia</h2>
+            <h3>Australia</h3>
             <div class="row mt-4">
                 {% for destination in destinations %}
                     {% if destination.continent == "Australia" %}
                         <div class="col-sm-12 col-md-6 col-lg-4 mb-3">
-                            <h3>{{ destination.country }}</h3>
+                            <h4>{{ destination.country }}</h4>
                             <img class="img-dive-destinations" id="img_tag" onerror="this.onerror=null;this.src='https://placeimg.com/300/300/nature';" src="{{ destination.image_of_place }}" alt="Diving in various places">
                             <p><i>{{ destination.dive_description }}</i></p>
                             <p>created by: {{ destination.created_by }} </p>
@@ -147,7 +147,7 @@
                 {% endfor %}
             </div>
             {% else %}
-                <h1 class="text-danger">No Results Found</h1>
+                <h2 class="text-danger">No Results Found</h2>
             {% endif %}
         </section>
     </div>
