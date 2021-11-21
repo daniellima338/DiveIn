@@ -15,7 +15,7 @@ function initMap() {
 }
 
 
-// function to show password with onclick. 
+// function to show password with onclick. taken from https://www.w3schools.com/howto/howto_js_toggle_password.asp
 function show_password() {
   var x = document.getElementById("password");
   if (x.type === "password") {
