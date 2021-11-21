@@ -165,11 +165,15 @@ You can find my wireframes below:
 
 ### Libraries & Frameworks
 
-* [Font Awesome](https://fontawesome.com/)
-* [Bootstrap](https://getbootstrap.com/)
-* [Google Fonts](https://fonts.google.com/)
-* [Jquery](https://jquery.com/)
-* [MongoDB](https://en.wikipedia.org/wiki/MongoDB)
+- [Flask](https://flask.palletsprojects.com/) - Python web framework, used for displaying data from backend databases to frontend presentation.
+- [Bootstrap](https://getbootstrap.com/) - CSS framework, mainly used for components.
+- [jQuery](https://jquery.com/) - JavaScript library, used for refactoring code.
+- [MongoDB](https://www.mongodb.com/) - Cloud-based NoSQL database, used for housing data.
+- [Google Fonts](https://fonts.google.com/) - Merriweather font used in the design throughout.
+- [Google Icons](https://fonts.google.com/icons) - Used in the design throughout.
+- [Werkzeug](https://pypi.org/project/Werkzeug/) - WSCI web application library to assist in debugging and security validations.
+- [DNSPython](https://pypi.org/project/dnspython/) - DNS toolkit for Python.
+- [Flask-PyMongo](https://flask-pymongo.readthedocs.io/en/latest/) - Helpers to bridge Flask and PyMongo.
 
 
 ### Tools
@@ -257,17 +261,17 @@ The test has passed all the criteria and works like planned.
 
 The solution for this project has been to use a URL. I have provided the user a website to turn a image into a direct URL link, and from there they can pass it on to the website. 
 
-### 2
+### 2 The Dive destination page would not divide the dives into categories depending on continent using Jinja
 
 * **Solution** 
 
+The issue was that the heading was replicated for each dive using a Jinja for-loop. I took the headings out and put them seperate to the for-loop. 
 
-### 3
-* **Solution** 
+### 3 I accedently added my Google API key to the repository
 
+* **Solution**
 
-### 4
-* **Solution** 
+Sinse then i have regenerated the key, and put ekstra safety meassures in place.
 
 
 [Back to Top](#table-of-contents)
@@ -277,7 +281,40 @@ The solution for this project has been to use a URL. I have provided the user a 
 
 ## **Deployment**
 
-I deployed my project in the following way:
+1. Create project with [Code Institute full template](https://github.com/Code-Institute-Org/gitpod-full-template). 
+2. Create new repository from template
+3. Open up repository with Gitpod/VSCode/IDE of choice. 
+
+### Local deployment
+
+1. Log into your GitHub account and find the repository.
+2. Click on the 'Code' button (next to 'Add file').
+3. To clone the repository using HTTPS, under clone with HTTPS, copy the link.
+4. Then open Git Bash.
+5. Change the current working directory to where you want the cloned directory to be made.
+6. In your IDE's terminal type 'git clone' followed by the URL you copied.
+7. Press Enter.
+8. Your local clone will now be made.
+
+### Using Mongo
+
+1. Create an account with MongoDB.
+2. Create a database 'cluster'.
+3. Within your newly created cluster, create a database.
+4. Within your newly created database, create collections. These collections will store your documents (where the data is housed).
+5. Connect your application by clicking 'Connect' in the 'Databases' section.
+6. Link up your codebase with MongoDB by adding sensitive variables to your local env.py and config vars in Heroku. 
+7. If you're using tech like Flask, you will need to install other dependencies to aid technologies working together.
+
+### Deployment to Heroku
+
+1. Log in to [Heroku](https://www.heroku.com/).
+2. Click 'New' on the Dashboard and select 'Create new app'.
+3. Select your region and create an app name.
+4. Make sure you add all your environment and configuration variables in 'Config Vars' under 'Settings' tab. 
+4. Select 'Deploy' option in menu. 
+5. Enable automatic deployments from your GitHub by connecting accounts and selecting automatic deployment option. 
+6. Click 'Deploy branch' 
 
 
 [Back to Top](#table-of-contents)
@@ -285,11 +322,11 @@ I deployed my project in the following way:
 <a></a>
 --- 
 
-## **Credits**
-
+### ** Credit **
+I have drawn much inspiration from different posts on Stackoverflow. Credit is also given to my mentor [Eventyret_mentor](https://github.com/Eventyret), whom have helped me during the project period. 
 
 ### **Acknowledgements**
-
+I want to thank the 3 people who tested the website(Andreas, Niels and Susanne). They gave valuable feedback to optimize the structure and feel of the website.
 
 [Back to Top](#table-of-contents)
 
